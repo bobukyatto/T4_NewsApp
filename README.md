@@ -1,2 +1,2 @@
-# T4_NewsApp
+# NewsReveal
 An application to detect fake news in the community
