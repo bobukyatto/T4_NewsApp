@@ -16,6 +16,11 @@
 		51396A992487338D00B85927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51396A972487338D00B85927 /* LaunchScreen.storyboard */; };
 		51396AA42487338D00B85927 /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51396AA32487338D00B85927 /* NewsAppTests.swift */; };
 		51396AAF2487338D00B85927 /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51396AAE2487338D00B85927 /* NewsAppUITests.swift */; };
+		8E0B7F9124A9C030007A4526 /* OfficialNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F8F24A9C030007A4526 /* OfficialNews.storyboard */; };
+		8E0B7F9324A9C14C007A4526 /* UserNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9224A9C14C007A4526 /* UserNews.storyboard */; };
+		8E0B7F9624A9C249007A4526 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9424A9C249007A4526 /* Bookmarks.storyboard */; };
+		8E0B7F9824A9C265007A4526 /* Badges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9724A9C265007A4526 /* Badges.storyboard */; };
+		8E0B7F9B24A9C278007A4526 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9924A9C278007A4526 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		51396AAA2487338D00B85927 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51396AAE2487338D00B85927 /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		51396AB02487338D00B85927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E0B7F9024A9C030007A4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NewsApp/Base.lproj/OfficialNews.storyboard; sourceTree = "<group>"; };
+		8E0B7F9224A9C14C007A4526 /* UserNews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserNews.storyboard; sourceTree = "<group>"; };
+		8E0B7F9524A9C249007A4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NewsApp/Base.lproj/Bookmarks.storyboard; sourceTree = "<group>"; };
+		8E0B7F9724A9C265007A4526 /* Badges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Badges.storyboard; sourceTree = "<group>"; };
+		8E0B7F9A24A9C278007A4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NewsApp/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,11 @@
 		51396A7E2487338C00B85927 = {
 			isa = PBXGroup;
 			children = (
+				8E0B7F9924A9C278007A4526 /* Profile.storyboard */,
+				8E0B7F9724A9C265007A4526 /* Badges.storyboard */,
+				8E0B7F9424A9C249007A4526 /* Bookmarks.storyboard */,
+				8E0B7F9224A9C14C007A4526 /* UserNews.storyboard */,
+				8E0B7F8F24A9C030007A4526 /* OfficialNews.storyboard */,
 				51396A892487338C00B85927 /* NewsApp */,
 				51396AA22487338D00B85927 /* NewsAppTests */,
 				51396AAD2487338D00B85927 /* NewsAppUITests */,
@@ -235,8 +250,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0B7F9124A9C030007A4526 /* OfficialNews.storyboard in Resources */,
+				8E0B7F9824A9C265007A4526 /* Badges.storyboard in Resources */,
+				8E0B7F9B24A9C278007A4526 /* Profile.storyboard in Resources */,
 				51396A992487338D00B85927 /* LaunchScreen.storyboard in Resources */,
+				8E0B7F9324A9C14C007A4526 /* UserNews.storyboard in Resources */,
 				51396A962487338D00B85927 /* Assets.xcassets in Resources */,
+				8E0B7F9624A9C249007A4526 /* Bookmarks.storyboard in Resources */,
 				51396A942487338C00B85927 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +335,30 @@
 				51396A982487338D00B85927 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8E0B7F8F24A9C030007A4526 /* OfficialNews.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E0B7F9024A9C030007A4526 /* Base */,
+			);
+			name = OfficialNews.storyboard;
+			sourceTree = "<group>";
+		};
+		8E0B7F9424A9C249007A4526 /* Bookmarks.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E0B7F9524A9C249007A4526 /* Base */,
+			);
+			name = Bookmarks.storyboard;
+			sourceTree = "<group>";
+		};
+		8E0B7F9924A9C278007A4526 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E0B7F9A24A9C278007A4526 /* Base */,
+			);
+			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
