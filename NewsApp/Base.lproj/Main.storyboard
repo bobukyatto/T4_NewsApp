@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="LAA-SU-HUa" kind="relationship" relationship="rootViewController" id="a3b-aw-lso"/>
+                        <segue destination="SVX-CE-GJh" kind="relationship" relationship="rootViewController" id="cKb-FO-VzU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMa-AP-oHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,7 +92,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJj-UY-12s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="1"/>
+            <point key="canvasLocation" x="1375" y="-374"/>
+        </scene>
+        <!--OfficialNews-->
+        <scene sceneID="yAy-RJ-17T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OfficialNews" id="SVX-CE-GJh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8Ia-7Q-QD3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxj-94-HEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815.9420289855075" y="0.0"/>
         </scene>
     </scenes>
     <resources>
