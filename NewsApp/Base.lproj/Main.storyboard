@@ -85,16 +85,6 @@
             <point key="canvasLocation" x="874" y="1"/>
         </scene>
         <!--OfficialNews-->
-        <scene sceneID="NLa-HZ-r68">
-            <objects>
-                <viewControllerPlaceholder storyboardName="OfficialNews" id="LAA-SU-HUa" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="EjC-oy-gZb"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NJj-UY-12s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1375" y="-374"/>
-        </scene>
-        <!--OfficialNews-->
         <scene sceneID="yAy-RJ-17T">
             <objects>
                 <viewControllerPlaceholder storyboardName="OfficialNews" id="SVX-CE-GJh" sceneMemberID="viewController">
