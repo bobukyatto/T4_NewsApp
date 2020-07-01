@@ -58,7 +58,7 @@
                                             <outlet property="UNameLabel" destination="x1o-lr-rqb" id="v9a-FC-CAN"/>
                                             <outlet property="UNewsImage" destination="AC0-vu-p3t" id="3R7-v4-f7E"/>
                                             <outlet property="UsernameLabel" destination="R42-gI-MVq" id="gpS-rt-i76"/>
-                                            <segue destination="2mp-g2-w8V" kind="show" id="bLp-hv-2RG"/>
+                                            <segue destination="2mp-g2-w8V" kind="show" identifier="ShowUserNewsDetails" id="bLp-hv-2RG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--User News Detail View Controller-->
         <scene sceneID="N7U-dn-GXM">
             <objects>
-                <viewController id="2mp-g2-w8V" sceneMemberID="viewController">
+                <viewController id="2mp-g2-w8V" customClass="UserNewsDetailViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hvr-TW-9qR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="contentLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-JA-ABi">
-                                <rect key="frame" x="20" y="271" width="374" height="425"/>
+                                <rect key="frame" x="20" y="272" width="374" height="425"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -124,6 +124,13 @@
                         <viewLayoutGuide key="safeArea" id="CYp-dj-Uf0"/>
                     </view>
                     <navigationItem key="navigationItem" id="l6o-To-3le"/>
+                    <connections>
+                        <outlet property="contentLabel" destination="qOa-JA-ABi" id="omp-AL-ftb"/>
+                        <outlet property="dateLabel" destination="658-9w-bUc" id="Y5x-0c-bdF"/>
+                        <outlet property="titleLabel" destination="8R8-2B-DQQ" id="DwW-wq-FfB"/>
+                        <outlet property="usernameLabel" destination="MOl-Yg-0Ys" id="Y9Y-Jd-5P5"/>
+                        <outlet property="usernewsImage" destination="gdk-pb-KjE" id="tVg-U0-mPr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tH-Zl-d6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

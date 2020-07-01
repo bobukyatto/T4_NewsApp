@@ -12,12 +12,14 @@ class UserNewsArticle: NSObject {
     var username: String
     var title: String
     var content: String
-    var date: Date
+    var date: String
+    var imageName: String
     
-    init(username: String, title: String, content: String, date: Date){
+    init(_ username: String,_ title: String,_ content: String,_ date: String,_ imageName: String){
         self.username = username
         self.title = title
         self.content = content
         self.date = date
+        self.imageName = imageName
     }
 }
