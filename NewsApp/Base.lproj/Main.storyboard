@@ -17,10 +17,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="AEQ-zc-bhM" kind="relationship" relationship="viewControllers" id="5dU-h9-43M"/>
-                        <segue destination="hPC-Fd-pjf" kind="relationship" relationship="viewControllers" id="zoI-Be-HmF"/>
-                        <segue destination="QMl-Ph-g18" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="7CD-7K-06T" kind="relationship" relationship="viewControllers" id="uh8-Lc-Xj3"/>
-                        <segue destination="Taf-WN-CcR" kind="relationship" relationship="viewControllers" id="9Xw-Rt-gKt"/>
+                        <segue destination="oci-wA-mxy" kind="relationship" relationship="viewControllers" id="qyz-K5-dEd"/>
+                        <segue destination="yHF-wG-9CG" kind="relationship" relationship="viewControllers" id="oZn-7P-DAk"/>
+                        <segue destination="fVD-F1-lqY" kind="relationship" relationship="viewControllers" id="uGV-Ym-AuG"/>
+                        <segue destination="z7M-Fc-Lbm" kind="relationship" relationship="viewControllers" id="7gt-8k-aEU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -32,40 +32,61 @@
             <objects>
                 <viewControllerPlaceholder storyboardName="UserNews" id="QMl-Ph-g18" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="i71-yD-fi5"/>
+                    <navigationItem key="navigationItem" id="Vmd-VB-OFQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nM3-7E-eUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="758" y="1154"/>
         </scene>
         <!--Bookmarks-->
         <scene sceneID="6QH-aQ-zGX">
             <objects>
                 <viewControllerPlaceholder storyboardName="Bookmarks" id="7CD-7K-06T" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="alN-xS-ihn"/>
+                    <navigationItem key="navigationItem" id="eeK-6b-8yH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IB-HV-Om0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-959" y="974"/>
+            <point key="canvasLocation" x="-794" y="1154"/>
         </scene>
         <!--Badges-->
         <scene sceneID="Ufn-60-kcJ">
             <objects>
                 <viewControllerPlaceholder storyboardName="Badges" id="Taf-WN-CcR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rMk-9s-QhF"/>
+                    <navigationItem key="navigationItem" id="0JJ-CX-SEo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuI-mR-fM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="979"/>
+            <point key="canvasLocation" x="1" y="1154"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="A6c-YF-9au">
+            <objects>
+                <navigationController id="z7M-Fc-Lbm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="user-duotone" landscapeImage="user-duotone" id="xPE-bC-Dfb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uh5-1S-DnB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hPC-Fd-pjf" kind="relationship" relationship="rootViewController" id="pZT-nj-rEX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BX2-Y3-Zea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="-731"/>
         </scene>
         <!--Profile-->
         <scene sceneID="2By-2M-piO">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="hPC-Fd-pjf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="T8a-Nw-X1J"/>
+                    <navigationItem key="navigationItem" id="PWJ-Zs-ymz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFP-2P-d8M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="-1079"/>
+            <point key="canvasLocation" x="1420" y="-731"/>
         </scene>
         <!--News-->
         <scene sceneID="GTD-8y-wJR">
@@ -82,7 +103,24 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMa-AP-oHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="1"/>
+            <point key="canvasLocation" x="758" y="0.0"/>
+        </scene>
+        <!--User News-->
+        <scene sceneID="oQE-z0-Eq8">
+            <objects>
+                <navigationController id="oci-wA-mxy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User News" image="user-newspaper-duotone" landscapeImage="user-newspaper-duotone" id="Cp6-fs-BXi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tbr-lE-HpR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QMl-Ph-g18" kind="relationship" relationship="rootViewController" id="9a7-9Y-jTF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5J-kR-D3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="733"/>
         </scene>
         <!--OfficialNews-->
         <scene sceneID="yAy-RJ-17T">
@@ -92,10 +130,48 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxj-94-HEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815.9420289855075" y="0.0"/>
+            <point key="canvasLocation" x="1421" y="0.0"/>
+        </scene>
+        <!--Badges-->
+        <scene sceneID="yz9-iw-TrC">
+            <objects>
+                <navigationController id="fVD-F1-lqY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Badges" image="badge-check-duotone" landscapeImage="badge-check-duotone" id="NlX-6T-uPV"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SfW-Hf-a22">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Taf-WN-CcR" kind="relationship" relationship="rootViewController" id="jvw-et-A0Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOE-RS-mY4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="733"/>
+        </scene>
+        <!--Bookmarks-->
+        <scene sceneID="ik6-6h-BSe">
+            <objects>
+                <navigationController id="yHF-wG-9CG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookmarks" image="bookmark-duotone" landscapeImage="bookmark-duotone" id="h7k-Bd-6fi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gvB-rD-vjw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7CD-7K-06T" kind="relationship" relationship="rootViewController" id="RT1-eb-6IJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pId-kr-HVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="733"/>
         </scene>
     </scenes>
     <resources>
+        <image name="badge-check-duotone" width="30" height="30"/>
+        <image name="bookmark-duotone" width="30" height="30"/>
         <image name="newspaper-duotone" width="30" height="30"/>
+        <image name="user-duotone" width="30" height="30"/>
+        <image name="user-newspaper-duotone" width="30" height="30"/>
     </resources>
 </document>

@@ -118,6 +118,7 @@
 		51396A892487338C00B85927 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E1DDEC424AC1EBF0000933E /* Controllers */,
 				D4DF66C924AC185600D46005 /* Models */,
 				8E840BFF24AB981900A5C76B /* Storyboards */,
 				51396A8A2487338C00B85927 /* AppDelegate.swift */,
@@ -149,6 +150,13 @@
 				51396AB02487338D00B85927 /* Info.plist */,
 			);
 			path = NewsAppUITests;
+			sourceTree = "<group>";
+		};
+		8E1DDEC424AC1EBF0000933E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8E840BFF24AB981900A5C76B /* Storyboards */ = {
