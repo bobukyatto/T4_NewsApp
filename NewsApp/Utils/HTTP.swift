@@ -3,6 +3,7 @@
 //  P9a_NewsApp2
 //
 //  Created by KIM FOONG CHOW on 7/5/17.
+//  Updated by Joel Tan (174866J) on 3/7/20
 //  Copyright © 2017 NYP. All rights reserved.
 //
 
@@ -62,7 +63,12 @@ class HTTP: NSObject {
                     data, response, error in var result : JSON?
                     
                     if (data != nil) {
-                        result = JSON.init(data: data!)
+                        do {
+                            result = try JSON.init(data: data!)
+                        }
+                        catch {
+                            print("HTTP.swift: \(error)")
+                        }
                     }
                     
                     onComplete?(result, response, error)

@@ -17,7 +17,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         tableView.reloadData()
         // FIXME: Commented out loadTopHeadlines() to prevent hitting API call limit.
-        // loadTopHeadlines(nil)
+        loadTopHeadlines(nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
