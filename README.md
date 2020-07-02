@@ -8,6 +8,6 @@
 
 ##### Collaborator's Github Profile
 * [Joel [ JDesignEra ]](https://github.com/JDesignEra)
-* [Sharon [bobukyatto]](https://github.com/bobukyatto)
-* [Aadi [AadiRawr]](https://github.com/AadiRawr)
-* [Ming Han [145532G]](https://github.com/145532G)
+* [Sharon [ bobukyatto ]](https://github.com/bobukyatto)
+* [Aadi [ AadiRawr ]](https://github.com/AadiRawr)
+* [Ming Han [ 145532G ]](https://github.com/145532G)
