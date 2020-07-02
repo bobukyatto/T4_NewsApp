@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>770114797322-fi6ak7k4luc47pidcp1jhqnsprta3jg9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.770114797322-fi6ak7k4luc47pidcp1jhqnsprta3jg9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDeOCDbZZ5QSvT40OtcOGLarIb9XxQFfsA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>770114797322</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>T4.NewsApp</string>
+	<key>PROJECT_ID</key>
+	<string>newsreveal-fc24a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>newsreveal-fc24a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:770114797322:ios:5ec8d23136ce2eb2aa84f3</string>
+	<key>DATABASE_URL</key>
+	<string>https://newsreveal-fc24a.firebaseio.com</string>
+</dict>
+</plist>
