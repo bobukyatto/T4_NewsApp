@@ -7,10 +7,17 @@
 * [Firebase Firestore](https://cocoapods.org/pods/FirebaseFirestore)
 * [FirebaseFirestoreSwift](https://cocoapods.org/pods/FirebaseFirestoreSwift)
 
-***
-
 ## API
 * [newsapi.org](https://newsapi.org/)
+
+***
+
+## Logo Colors
+| Color | Hex Code |
+|-------|---------|
+| Chinese Porcelain Blue | #36627b |
+| Naval Blue | #2f3d4c |
+| White | #ffffff |
 
 ***
 
