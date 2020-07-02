@@ -19,11 +19,11 @@ class OfficialNewsDataManager: NSObject {
                 return
             }
             
-            let result = json!
+            let results = json!
             var articleList: [OfficialNewsArticle] = []
             
-            for i in 0 ..< result["articles"].count {
-                let a = result["articles"][i]
+            for i in 0 ..< results["articles"].count {
+                let a = results["articles"][i]
                 let source = a["source"]["name"].string
                 
                 articleList.append(
