@@ -6,6 +6,7 @@
 * HTTP.swift [ Created by Mr Chow, Updated by [Joel](https://github.com/JDesignEra) ]
 * [Firebase Firestore](https://cocoapods.org/pods/FirebaseFirestore)
 * [FirebaseFirestoreSwift](https://cocoapods.org/pods/FirebaseFirestoreSwift)
+* [SwiftyGif 5.3.0](https://github.com/kirualex/SwiftyGif)
 
 ## API
 * [newsapi.org](https://newsapi.org/)
@@ -14,7 +15,7 @@
 
 ## Logo Colors
 | Color | Hex Code |
-|-------|---------|
+|--------|-------------|
 | Chinese Porcelain Blue | #36627b |
 | Naval Blue | #2f3d4c |
 | White | #ffffff |
