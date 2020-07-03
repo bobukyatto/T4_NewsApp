@@ -19,7 +19,7 @@
 		8E0B7F9624A9C249007A4526 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9424A9C249007A4526 /* Bookmarks.storyboard */; };
 		8E0B7F9824A9C265007A4526 /* Badges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9724A9C265007A4526 /* Badges.storyboard */; };
 		8E0B7F9B24A9C278007A4526 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9924A9C278007A4526 /* Profile.storyboard */; };
-		8E1BF25A24AEF7E700071367 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1BF25924AEF7E700071367 /* ViewController.swift */; };
+		8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1BF25924AEF7E700071367 /* MainUITabBarController.swift */; };
 		8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1BF25D24AF007200071367 /* UIView+Constraints.swift */; };
 		8E1BF26424AF0AC000071367 /* LogoAnimationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1BF26324AF0AC000071367 /* LogoAnimationUIView.swift */; };
 		8E1BF26624AF0FD200071367 /* animated-logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8E1BF26524AF0FD100071367 /* animated-logo.gif */; };
@@ -79,7 +79,7 @@
 		8E0B7F9524A9C249007A4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NewsApp/Base.lproj/Bookmarks.storyboard; sourceTree = "<group>"; };
 		8E0B7F9724A9C265007A4526 /* Badges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Badges.storyboard; sourceTree = "<group>"; };
 		8E0B7F9A24A9C278007A4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NewsApp/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
-		8E1BF25924AEF7E700071367 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E1BF25924AEF7E700071367 /* MainUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITabBarController.swift; sourceTree = "<group>"; };
 		8E1BF25D24AF007200071367 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		8E1BF26324AF0AC000071367 /* LogoAnimationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationUIView.swift; sourceTree = "<group>"; };
 		8E1BF26524AF0FD100071367 /* animated-logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "animated-logo.gif"; path = "NewsApp/Gif/animated-logo.gif"; sourceTree = SOURCE_ROOT; };
@@ -202,7 +202,7 @@
 		8E1DDEC424AC1EBF0000933E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E1BF25924AEF7E700071367 /* ViewController.swift */,
+				8E1BF25924AEF7E700071367 /* MainUITabBarController.swift */,
 				8E1DDECF24AC46E90000933E /* OfficialNewsViewController.swift */,
 				8E1DDED124AC4C440000933E /* OfficialNewsTableViewCell.swift */,
 			);
@@ -525,7 +525,7 @@
 				8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */,
 				D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */,
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
-				8E1BF25A24AEF7E700071367 /* ViewController.swift in Sources */,
+				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
 				8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyGif
 
-class ViewController: UITabBarController {
+class MainUITabBarController: UITabBarController {
     let logoAnimationUIView = LogoAnimationUIView()
         
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class ViewController: UITabBarController {
     }
 }
 
-extension ViewController: SwiftyGifDelegate {
+extension MainUITabBarController: SwiftyGifDelegate {
     func gifDidStop(sender: UIImageView) {
         logoAnimationUIView.isHidden = true
     }
