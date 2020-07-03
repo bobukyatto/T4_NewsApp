@@ -1,5 +1,5 @@
-# NewsReveal
 [![News Reveal](https://github.com/bobukyatto/T4_NewsApp/blob/master/NewsApp/Assets.xcassets/AppIcon.appiconset/40-1.png)](https://github.com/bobukyatto/T4_NewsApp)
+# News Reveal
 
 ## Libraries
 * [SwiftyJSON 5.0](https://github.com/SwiftyJSON/SwiftyJSON)
