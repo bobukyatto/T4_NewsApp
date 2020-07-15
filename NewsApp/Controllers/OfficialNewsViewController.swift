@@ -73,7 +73,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     
     func loadNews(loadOnStart: Bool) {
         // Delay alert present if initial load to avoid overlap with launchScreen animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + (loadOnStart ? 1.5 : 0), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (loadOnStart ? 1 : 0), execute: {
             self.loadingAlertPresent(loadingText: "Loading...")
         })
         
