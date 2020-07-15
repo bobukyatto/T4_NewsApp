@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "straits-times.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -8,15 +8,17 @@
 
 import UIKit
 
-class OfficialNewsArticle: NSObject {
+class OfficialNewsArticle: Codable {
+    var id: String?
     var source: String;
     var title: String;
     var desc: String;
     var url: String;
     var urlImg: String;
-    var publishDate: String;
+    var publishDate: Date;
     
-    init(source: String, title: String, desc: String, url: String, urlImg: String, publishDate: String) {
+    init(id: String?, source: String, title: String, desc: String, url: String, urlImg: String, publishDate: Date) {
+        self.id = id;
         self.source = source;
         self.title = title;
         self.desc = desc;
