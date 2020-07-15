@@ -39,6 +39,7 @@
 		A9B6C49CF4B895F92CC1E3D6 /* Pods_NewsApp_NewsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907F092C9BDB749524CB4457 /* Pods_NewsApp_NewsAppUITests.framework */; };
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
+		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
 		D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		C3FA0FEFE127F27E73C7315B /* Pods-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsCell.swift; sourceTree = "<group>"; };
 		D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsArticle.swift; sourceTree = "<group>"; };
+		D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsViewController.swift; sourceTree = "<group>"; };
 		D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +175,6 @@
 				51396A972487338D00B85927 /* LaunchScreen.storyboard */,
 				51396A9A2487338D00B85927 /* Info.plist */,
 				D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */,
-				D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */,
 				8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */,
 				8E1BF26724AF117300071367 /* Gif */,
 			);
@@ -209,12 +210,14 @@
 		8E1DDEC424AC1EBF0000933E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */,
 				4DA1319A24BDE9A0001641F6 /* LoginViewController.swift */,
 				4DA1319E24BDEED9001641F6 /* ProfileViewController.swift */,
 				8E1BF25924AEF7E700071367 /* MainUITabBarController.swift */,
 				8E1DDECF24AC46E90000933E /* OfficialNewsViewController.swift */,
 				8E1DDED124AC4C440000933E /* OfficialNewsTableViewCell.swift */,
 				4DA1319C24BDE9B5001641F6 /* SignUpViewController.swift */,
+				D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
 				4DA1319D24BDE9B5001641F6 /* SignUpViewController.swift in Sources */,
 				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
+				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
 				8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */,
@@ -666,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -720,7 +724,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
