@@ -44,6 +44,9 @@
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
 		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
 		D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */; };
+		D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17424C3CDEC001B82F6 /* Badge.swift */; };
+		D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */; };
+		D54DA17924C492A6001B82F6 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,9 @@
 		D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsArticle.swift; sourceTree = "<group>"; };
 		D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsViewController.swift; sourceTree = "<group>"; };
 		D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsDetailViewController.swift; sourceTree = "<group>"; };
+		D54DA17424C3CDEC001B82F6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
+		D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,8 @@
 				8E188CA224BE2C52002FA124 /* OfficialNewsDetailsViewController.swift */,
 				8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */,
 				D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */,
+				D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */,
+				D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 				8E1DDEC524AC2B0E0000933E /* OfficialNewsArticle.swift */,
 				8E188C9E24BDED40002FA124 /* DBLastModified.swift */,
 				8E97C4DF24BEAEB50084978D /* Constants.swift */,
+				D54DA17424C3CDEC001B82F6 /* Badge.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -543,16 +552,19 @@
 				D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */,
 				8E1DDECE24AC2E570000933E /* OfficialNewsDataManager.swift in Sources */,
 				8E1BF26424AF0AC000071367 /* LogoAnimationUIView.swift in Sources */,
+				D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */,
 				4DA1319B24BDE9A0001641F6 /* LoginViewController.swift in Sources */,
 				D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */,
 				8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */,
 				8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */,
 				4DA1319F24BDEED9001641F6 /* ProfileViewController.swift in Sources */,
 				8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */,
+				D54DA17924C492A6001B82F6 /* BadgeTableViewCell.swift in Sources */,
 				D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */,
 				8E188CA324BE2C52002FA124 /* OfficialNewsDetailsViewController.swift in Sources */,
 				8E97C4E024BEAEB50084978D /* Constants.swift in Sources */,
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
+				D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */,
 				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
 				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E188CA124BDEE8E002FA124 /* DBLastModifiedDataManager.swift in Sources */,
