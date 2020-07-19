@@ -8,18 +8,20 @@
 
 import UIKit
 
-class UserNewsArticle: NSObject {
+class UserNewsArticle: Codable {
     var username: String
     var title: String
     var content: String
     var date: String
     var imageName: String
+    var lastUpdated: String
     
-    init(_ username: String,_ title: String,_ content: String,_ date: String,_ imageName: String){
+    init(_ username: String,_ title: String,_ content: String,_ date: String,_ imageName: String, lastUpdated: String){
         self.username = username
         self.title = title
         self.content = content
         self.date = date
         self.imageName = imageName
+        self.lastUpdated = lastUpdated
     }
 }
