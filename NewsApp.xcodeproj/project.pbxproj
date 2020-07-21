@@ -40,6 +40,9 @@
 		8EBFE47524AE639F007C1AF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */; };
 		9B6EBDB29E0E71EAFC283DCD /* Pods_NewsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E855A73840046D66B58A8 /* Pods_NewsAppTests.framework */; };
 		A9B6C49CF4B895F92CC1E3D6 /* Pods_NewsApp_NewsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907F092C9BDB749524CB4457 /* Pods_NewsApp_NewsAppUITests.framework */; };
+		ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */; };
+		ABDD3F6B24C7417E001BAF0F /* UserNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6A24C7417E001BAF0F /* UserNewsTableViewCell.swift */; };
+		ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */; };
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
 		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
@@ -110,6 +113,9 @@
 		8EBFE47224AE5A9A007C1AF2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		907F092C9BDB749524CB4457 /* Pods_NewsApp_NewsAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp_NewsAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsDataManager.swift; sourceTree = "<group>"; };
+		ABDD3F6A24C7417E001BAF0F /* UserNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsTableViewCell.swift; sourceTree = "<group>"; };
+		ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsFormViewController.swift; sourceTree = "<group>"; };
 		AF02E816DA1B632421C1502A /* Pods-NewsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3FA0FEFE127F27E73C7315B /* Pods-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsCell.swift; sourceTree = "<group>"; };
@@ -222,7 +228,7 @@
 		8E1DDEC424AC1EBF0000933E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */,
+				ABDD3F6924C74139001BAF0F /* User News */,
 				4DA1319A24BDE9A0001641F6 /* LoginViewController.swift */,
 				4DA1319E24BDEED9001641F6 /* ProfileViewController.swift */,
 				8E1BF25924AEF7E700071367 /* MainUITabBarController.swift */,
@@ -230,7 +236,6 @@
 				8E1DDED124AC4C440000933E /* OfficialNewsTableViewCell.swift */,
 				8E188CA224BE2C52002FA124 /* OfficialNewsDetailsViewController.swift */,
 				8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */,
-				D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */,
 				D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */,
 				D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */,
 			);
@@ -242,6 +247,7 @@
 			children = (
 				8E1DDECD24AC2E570000933E /* OfficialNewsDataManager.swift */,
 				8E188CA024BDEE8E002FA124 /* DBLastModifiedDataManager.swift */,
+				ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -266,6 +272,17 @@
 				8E840C0524ABE0F500A5C76B /* OfficialNews.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ABDD3F6924C74139001BAF0F /* User News */ = {
+			isa = PBXGroup;
+			children = (
+				D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */,
+				D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */,
+				ABDD3F6A24C7417E001BAF0F /* UserNewsTableViewCell.swift */,
+				ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */,
+			);
+			path = "User News";
 			sourceTree = "<group>";
 		};
 		C388427F3BB6FFB11E0B1AE1 /* Frameworks */ = {
@@ -558,6 +575,7 @@
 				8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */,
 				8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */,
 				4DA1319F24BDEED9001641F6 /* ProfileViewController.swift in Sources */,
+				ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */,
 				8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */,
 				D54DA17924C492A6001B82F6 /* BadgeTableViewCell.swift in Sources */,
 				D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */,
@@ -566,11 +584,13 @@
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
 				D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */,
 				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
+				ABDD3F6B24C7417E001BAF0F /* UserNewsTableViewCell.swift in Sources */,
 				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E188CA124BDEE8E002FA124 /* DBLastModifiedDataManager.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
 				8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */,
+				ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */,
 				8E97C4DE24BEACD70084978D /* SignUpViewViewController.swift in Sources */,
 				51396A8D2487338C00B85927 /* SceneDelegate.swift in Sources */,
 				8E188C9F24BDED40002FA124 /* DBLastModified.swift in Sources */,
