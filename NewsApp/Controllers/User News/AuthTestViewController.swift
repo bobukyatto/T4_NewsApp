@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ProfileViewController: UIViewController {
+class AuthTestViewController: UIViewController {
 
     @IBOutlet weak var signoutButton: UIButton!
     
@@ -58,3 +58,4 @@ class ProfileViewController: UIViewController {
     */
 
 }
+

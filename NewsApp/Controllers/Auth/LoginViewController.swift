@@ -94,11 +94,11 @@ class LoginViewController: UIViewController {
     
     func transitiontoHome() {
         
-        let profileViewController =
+        let authtestViewController =
             storyboard?.instantiateViewController(identifier:
-                Constants.Storyboard.profileViewController) as? ProfileViewController
+                Constants.Storyboard.authtestViewController) as? AuthTestViewController
         
-        view.window?.rootViewController = profileViewController
+        view.window?.rootViewController = authtestViewController
         view.window?.makeKeyAndVisible()
     }
     
