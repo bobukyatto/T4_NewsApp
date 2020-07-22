@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-dK-YVo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-dK-YVo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="hME-ME-b9C">
@@ -24,7 +24,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserNewsCell" rowHeight="114" id="2ua-1v-m3B" customClass="UserNewsTableViewCell" customModule="News_Reveal" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="114" id="2ua-1v-m3B" customClass="UserNewsCell" customModule="News_Reveal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UserNewsCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ua-1v-m3B" id="2cq-6v-g37" customClass="UserNewsCell" customModule="News_Reveal">
@@ -57,16 +57,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <connections>
+                                                <outlet property="UDateLabel" destination="Sl5-Rq-6TB" id="Xh4-lq-fcV"/>
+                                                <outlet property="UNameLabel" destination="x1o-lr-rqb" id="5sK-ep-wPu"/>
+                                                <outlet property="UNewsImage" destination="AC0-vu-p3t" id="tek-xC-xzL"/>
+                                                <outlet property="UsernameLabel" destination="R42-gI-MVq" id="0gd-8x-NXW"/>
+                                            </connections>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="UDateLabel" destination="Sl5-Rq-6TB" id="Hly-Ok-IgJ"/>
-                                            <outlet property="UImageView" destination="AC0-vu-p3t" id="5Sy-X8-AvM"/>
-                                            <outlet property="UNameLabel" destination="x1o-lr-rqb" id="v9a-FC-CAN"/>
-                                            <outlet property="UsernameLabel" destination="R42-gI-MVq" id="gpS-rt-i76"/>
                                             <segue destination="2mp-g2-w8V" kind="show" identifier="ShowUserNewsDetails" id="bLp-hv-2RG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="F3G-EV-vZS"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="Ptv-sh-AMb"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -88,12 +94,13 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="newsTableView" destination="LaY-dK-YVo" id="KmE-hm-bP7"/>
                         <outlet property="tableView" destination="LaY-dK-YVo" id="JA6-5V-fyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
+            <point key="canvasLocation" x="748" y="359.37031484257875"/>
         </scene>
         <!--User News Form View Controller-->
         <scene sceneID="xdK-Aa-d3p">

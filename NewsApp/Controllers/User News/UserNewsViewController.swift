@@ -12,12 +12,35 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var newsList: [UserNewsArticle] = []
     
+    @IBOutlet weak var newsTableView: UITableView!
+    func loadNews(){
+        UserNewsDataManager.loadUserNews(){
+            newsListFromFireStore in
+            self.newsList = newsListFromFireStore
+            DispatchQueue.main.async {
+                self.newsTableView.reloadData()
+            }
+             
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsList.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UserNewsCell = tableView.dequeueReusableCell(withIdentifier: "UserNewsCell", for: indexPath) as! UserNewsCell
+        let cell: UserNewsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! UserNewsCell
+        let p = newsList[indexPath.row]
+
+        cell.UNameLabel?.text = "\(p.title)"
+        cell.UDateLabel?.text = "\(p.date)"
+        cell.UsernameLabel?.text = "test"
+        cell.UNewsImage?.image = nil
+        
         return cell
     }
     
@@ -31,6 +54,8 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
                 barButtonSystemItem: .add,
                 target: self,
                 action: #selector(uploadButtonClicked))
+        
+        loadNews()
         // Do any additional setup after loading the view.
     }
     
