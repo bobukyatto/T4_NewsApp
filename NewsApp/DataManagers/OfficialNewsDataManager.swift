@@ -64,9 +64,9 @@ class OfficialNewsDataManager: NSObject {
         })
         
         taskGroup.notify(queue: .main, execute: {
+            newsArticles.sort(by: { $0.publishDate > $1.publishDate })
+            
             if updateFlag {
-                newsArticles.sort(by: { $0.publishDate > $1.publishDate })
-                
                 self.deleteMultiOfficialNews(delArticles)
                 self.insertMultiOfficialNews(newsArticles)
                 

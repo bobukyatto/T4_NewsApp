@@ -11,7 +11,10 @@ import UIKit
 class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    var newsList: [OfficialNewsArticle] = []
+    var newsList: [String: [OfficialNewsArticle]] = [
+        "The Straits Times": [],
+        "CNA": []
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             let indexPath = self.tableView.indexPathForSelectedRow
             
             if (indexPath != nil) {
-                let article = newsList[indexPath!.row]
+                let article = newsList[Array(newsList.keys)[indexPath!.section]]?[indexPath!.row]
                 detailVC.article = article
             }
         }
@@ -41,11 +44,15 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return newsList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsList.count
+        if section < newsList.count {
+            return newsList[Array(newsList.keys)[section]]!.count
+        }
+        
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,7 +60,8 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
         
-        let n = newsList[indexPath.row]
+        let key = Array(newsList.keys)[indexPath.section]
+        let n = newsList[key]![indexPath.row]
         cell.dateLabel!.text = dateFormatter.string(from: n.publishDate)
         cell.titleLabel!.text = n.title
         
@@ -71,6 +79,14 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section < newsList.count {
+            return Array(newsList.keys)[section]
+        }
+        
+        return nil
+    }
+    
     func loadNews(delayLoadingAlert: Bool) {
         // Delay alert present if initial load to avoid overla with launchScreen animation
         DispatchQueue.main.asyncAfter(deadline: .now() + (delayLoadingAlert ? 2 : 0), execute: {
@@ -78,7 +94,20 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         })
         
         OfficialNewsDataManager().loadNews(onComplete: {
-            results in self.newsList = results
+            results in
+            
+            for item in self.newsList {
+                self.newsList[item.key] = []
+            }
+            
+            for item in results {
+                if item.source.lowercased() == "cna" {
+                    self.newsList["CNA"]?.append(item)
+                }
+                else if item.source.lowercased() == "the straits times" {
+                    self.newsList["The Straits Times"]?.append(item)
+                }
+            }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -94,23 +123,28 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         loadingAlertPresent(loadingText: "Searching...")
         
         if searchText != "" {
-            newsList = []
+            for item in self.newsList {
+                self.newsList[item.key] = []
+            }
             
             taskGroup.enter()
             officialNewsDM.newsSearchApi(params: "qInTitle=\(searchText)&domains=straitstimes.com&pageSize=100", onComplete: {
-                results in self.newsList.append(contentsOf: results)
+                results in self.newsList["The Straits Times"]?.append(contentsOf: results)
                 taskGroup.leave()
             })
             
             taskGroup.enter()
             officialNewsDM.newsSearchApi(params: "qInTitle=\(searchText)&domains=channelnewsasia.com&pageSize=100", onComplete: {
-                results in self.newsList.append(contentsOf: results)
+                results in self.newsList["CNA"]?.append(contentsOf: results)
                 taskGroup.leave()
             })
         }
         
         taskGroup.notify(queue: .main, execute: {
-            self.newsList.sort(by: { $0.publishDate > $1.publishDate })
+            for item in self.newsList {
+                self.newsList[item.key]?.sort(by: { $0.publishDate > $1.publishDate })
+            }
+            
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
         })
