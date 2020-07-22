@@ -11,9 +11,9 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class OfficialNewsDataManager: NSObject {
-    let db = Firestore.firestore()
+    static let db = Firestore.firestore()
     
-    // Store or retrive from DB with 30 mins interval check to prevent hitting API call limit
+    // Store or retrive from DB with 60 mins interval check to prevent hitting API call limit
     func loadNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
         let taskGroup = DispatchGroup()
         let dbLastModifiedDM = DBLastModifiedDataManager()
@@ -34,7 +34,7 @@ class OfficialNewsDataManager: NSObject {
                 if let idx: Int = dbLastModified.firstIndex(where: { $0.table == "officialNews" }) {
                     let lastModified: Int = Calendar.current.dateComponents([.minute], from: dbLastModified[idx].lastModified, to: Date()).minute ?? 0
                     
-                    updateFlag = lastModified > 30 || newsArticles.count < 1 ? true : false
+                    updateFlag = lastModified > 60 || newsArticles.count < 1 ? true : false
                 }
                 else {
                     updateFlag = true

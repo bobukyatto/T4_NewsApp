@@ -74,7 +74,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     func loadNews(delayLoadingAlert: Bool) {
         // Delay alert present if initial load to avoid overla with launchScreen animation
         DispatchQueue.main.asyncAfter(deadline: .now() + (delayLoadingAlert ? 2 : 0), execute: {
-            self.loadingAlertPresent(loadingText: "Loading...")
+            self.loadingAlertPresent(loadingText: "Loading List...")
         })
         
         OfficialNewsDataManager().loadNews(onComplete: {
