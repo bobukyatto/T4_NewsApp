@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nXh-9o-f30">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nXh-9o-f30">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -25,16 +25,14 @@
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <action selector="signup:" destination="pfS-Uf-zoQ" eventType="touchUpInside" id="DpJ-w0-Oid"/>
-                                            <segue destination="ffc-By-szH" kind="show" id="K02-w1-GFp"/>
+                                            <segue destination="ffc-By-szH" kind="show" id="JS6-Ns-E8T"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-vs-72W">
                                         <rect key="frame" x="0.0" y="70" width="334" height="37.5"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <action selector="login:" destination="pfS-Uf-zoQ" eventType="touchUpInside" id="89V-A2-lRd"/>
-                                            <segue destination="R9q-39-bpV" kind="show" id="NCQ-qp-q60"/>
+                                            <segue destination="R9q-39-bpV" kind="show" id="MgH-At-F8i"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -54,7 +52,6 @@
                     <tabBarItem key="tabBarItem" title="Item" id="j77-cu-Y22"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA6-UI-tKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="pfS-Uf-zoQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="749" y="-1079"/>
         </scene>
@@ -67,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RU4-ay-UUZ">
-                                <rect key="frame" x="40" y="40" width="334" height="370.5"/>
+                                <rect key="frame" x="40" y="40" width="334" height="419.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sv9-zK-WpD">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
@@ -102,7 +99,15 @@
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <action selector="signupTap:" destination="ffc-By-szH" eventType="touchUpInside" id="uen-Ag-pAg"/>
+                                            <action selector="signupTap:" destination="ffc-By-szH" eventType="touchUpInside" id="3CI-fn-8I9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2L-jg-XEA">
+                                        <rect key="frame" x="0.0" y="390.5" width="334" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Already have an account? Login"/>
+                                        <connections>
+                                            <segue destination="R9q-39-bpV" kind="show" id="ByW-YL-ya8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -124,12 +129,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="DVM-3C-qkQ"/>
                     <connections>
-                        <outlet property="cfmpass" destination="DDx-AS-MyH" id="GKn-xg-ddF"/>
-                        <outlet property="email" destination="AzZ-NL-dTx" id="COx-Sc-2xU"/>
-                        <outlet property="errorLabel" destination="Sv9-zK-WpD" id="Y2E-ME-YlZ"/>
-                        <outlet property="password" destination="k3J-UG-OEb" id="Dwi-u1-Xxh"/>
-                        <outlet property="signupButton" destination="JFA-Ew-tKL" id="npg-2n-zW8"/>
-                        <outlet property="username" destination="6SN-14-j34" id="l6v-L8-ljy"/>
+                        <outlet property="cfmpass" destination="DDx-AS-MyH" id="c5b-99-ses"/>
+                        <outlet property="email" destination="AzZ-NL-dTx" id="XNo-Zi-0kh"/>
+                        <outlet property="errorLabel" destination="Sv9-zK-WpD" id="yJg-in-a2E"/>
+                        <outlet property="password" destination="k3J-UG-OEb" id="keB-pO-OLI"/>
+                        <outlet property="signupButton" destination="JFA-Ew-tKL" id="QRQ-eq-pq0"/>
+                        <outlet property="username" destination="6SN-14-j34" id="Yit-78-3gi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHY-3b-XKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-fE-DA6">
-                                <rect key="frame" x="40" y="40" width="334" height="230.5"/>
+                                <rect key="frame" x="40" y="40" width="334" height="278.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu2-zz-UVu">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
@@ -170,7 +175,15 @@
                                         </constraints>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <action selector="loginTap:" destination="R9q-39-bpV" eventType="touchUpInside" id="gQs-Fg-vV1"/>
+                                            <action selector="loginTap:" destination="R9q-39-bpV" eventType="touchUpInside" id="5da-cU-vKP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-K3-YdI">
+                                        <rect key="frame" x="0.0" y="250.5" width="334" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Don't have an account? Sign Up"/>
+                                        <connections>
+                                            <segue destination="ffc-By-szH" kind="show" id="lHu-4F-Vzl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -190,10 +203,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZoM-ND-v6M"/>
                     <connections>
-                        <outlet property="email" destination="Ifw-9H-1fD" id="gw0-Y6-oXI"/>
-                        <outlet property="errorLabel" destination="yu2-zz-UVu" id="s8Z-d2-C9X"/>
-                        <outlet property="loginButton" destination="Aar-bf-llj" id="yBv-ZH-Qv4"/>
-                        <outlet property="password" destination="fUJ-dh-rUe" id="pFV-mm-v1Y"/>
+                        <outlet property="email" destination="Ifw-9H-1fD" id="RXb-hg-pJh"/>
+                        <outlet property="errorLabel" destination="yu2-zz-UVu" id="Ggf-Np-yZo"/>
+                        <outlet property="loginButton" destination="Aar-bf-llj" id="NNp-He-I0Z"/>
+                        <outlet property="password" destination="fUJ-dh-rUe" id="ufg-hl-n7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTa-2P-qAZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,21 +232,19 @@
                                 <rect key="frame" x="181" y="779" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Signout"/>
-                                <connections>
-                                    <action selector="signoutTap:" destination="ged-7O-EHJ" eventType="touchUpInside" id="3Cq-JS-Ps3"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hA8-ZB-OT4"/>
                     </view>
-                    <connections>
-                        <outlet property="signoutButton" destination="OCs-oN-dqO" id="yUb-oQ-fgp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qer-DG-f7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2401" y="-1081"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ByW-YL-ya8"/>
+        <segue reference="JS6-Ns-E8T"/>
+    </inferredMetricsTieBreakers>
 </document>
