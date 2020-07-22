@@ -75,21 +75,20 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hPC-Fd-pjf" kind="relationship" relationship="rootViewController" id="pZT-nj-rEX"/>
+                        <segue destination="0Rx-fR-Jh1" kind="relationship" relationship="rootViewController" id="6bn-oY-fBW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BX2-Y3-Zea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="758" y="-731"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="2By-2M-piO">
+        <!--Auth-->
+        <scene sceneID="0jV-e0-awj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="hPC-Fd-pjf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="T8a-Nw-X1J"/>
-                    <navigationItem key="navigationItem" id="PWJ-Zs-ymz"/>
+                <viewControllerPlaceholder storyboardName="Auth" id="0Rx-fR-Jh1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UuC-pB-nQD"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zFP-2P-d8M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q56-Pt-gKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1420" y="-731"/>
         </scene>
