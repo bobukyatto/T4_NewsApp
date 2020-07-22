@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cDe-Xt-S1K">
-                                <rect key="frame" x="40" y="714.5" width="334" height="107.5"/>
+                                <rect key="frame" x="40" y="667.5" width="334" height="154.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxX-n6-tgQ">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -34,6 +34,11 @@
                                         <connections>
                                             <segue destination="R9q-39-bpV" kind="show" id="MgH-At-F8i"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0z2-3J-e9Y">
+                                        <rect key="frame" x="0.0" y="127.5" width="334" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="OR BROWSE AS GUEST"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -345,7 +350,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ByW-YL-ya8"/>
-        <segue reference="lHu-4F-Vzl"/>
+        <segue reference="MgH-At-F8i"/>
+        <segue reference="JS6-Ns-E8T"/>
     </inferredMetricsTieBreakers>
 </document>
