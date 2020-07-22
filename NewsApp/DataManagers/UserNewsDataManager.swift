@@ -10,11 +10,32 @@ import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class UserNewsDataManager: NSObject {
-    let db = Firestore.firestore()
+class UserNewsDataManager {
+    static var db = Firestore.firestore()
     
-    func addUserNews(_ article: UserNewsArticle){
-        db.collection("userNews").document("placeholder").setData(
+    
+    static func loadUserNews(onComplete: (([UserNewsArticle]) -> Void)?){
+        db.collection("userNews").getDocuments(){
+            (querySnapshot, err) in
+            var newsList: [UserNewsArticle] = []
+            if let err = err{
+                print("Error getting documents: \(err)")
+            }
+            else{
+                for document in querySnapshot!.documents{
+                    var usernews = try? document.data(as: UserNewsArticle.self) as! UserNewsArticle
+                    
+                    if usernews != nil{
+                        newsList.append(usernews!)
+                    }
+                }
+            }
+            onComplete?(newsList)
+        }
+    }
+    
+    static func addUserNews(_ article: UserNewsArticle){
+        db.collection("userNews").document().setData(
             [
                 "username": article.username,
                 "title": article.title,
@@ -33,7 +54,7 @@ class UserNewsDataManager: NSObject {
         }
     }
     
-    func deleteUserNews(_ newsId: String){
+    static func deleteUserNews(_ newsId: String){
         db.collection("userNews").document("placeholder").delete()
         { err in
             if let err = err {

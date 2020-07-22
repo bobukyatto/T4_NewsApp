@@ -17,7 +17,7 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UserNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UserNewsCell", for: indexPath) as! UserNewsTableViewCell
+        let cell: UserNewsCell = tableView.dequeueReusableCell(withIdentifier: "UserNewsCell", for: indexPath) as! UserNewsCell
         return cell
     }
     
@@ -26,8 +26,24 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        self.navigationItem.leftBarButtonItem =
+            UIBarButtonItem(
+                barButtonSystemItem: .add,
+                target: self,
+                action: #selector(uploadButtonClicked))
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func uploadButtonClicked( ){
+        // Loads the UserNews.storyboard file
+              let s = UIStoryboard(name: "UserNews", bundle: nil)
+        // Loads next level View Controller from
+        // UserNews.storyboard
+        let v = s.instantiateViewController(withIdentifier:
+                  "UserNewsForm")
+        // Pushes the newly loaded view controller on
+        // to the stack.
+        self.navigationController?.pushViewController(v, animated: true)
     }
     
 
