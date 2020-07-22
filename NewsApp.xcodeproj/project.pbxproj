@@ -42,9 +42,9 @@
 		ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */; };
 		ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */; };
 		D408D05B24C7E0E200920A68 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D408D05A24C7E0E200920A68 /* Profile.storyboard */; };
-		D408D05F24C7E93C00920A68 /* AuthTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D05E24C7E93C00920A68 /* AuthTestViewController.swift */; };
 		D408D06324C7EA9D00920A68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D06224C7EA9D00920A68 /* ProfileViewController.swift */; };
 		D408D06524C7ECD800920A68 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D06424C7ECD800920A68 /* ForgotPassViewController.swift */; };
+		D408D06724C7FC8000920A68 /* AuthTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D06624C7FC8000920A68 /* AuthTestViewController.swift */; };
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
 		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
@@ -119,9 +119,9 @@
 		AF02E816DA1B632421C1502A /* Pods-NewsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3FA0FEFE127F27E73C7315B /* Pods-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D408D05A24C7E0E200920A68 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		D408D05E24C7E93C00920A68 /* AuthTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthTestViewController.swift; path = "/Users/itp312grp2/Desktop/T4_NewsApp/NewsApp/Controllers/User News/AuthTestViewController.swift"; sourceTree = "<absolute>"; };
 		D408D06224C7EA9D00920A68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D408D06424C7ECD800920A68 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		D408D06624C7FC8000920A68 /* AuthTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthTestViewController.swift; path = ../../../../AuthTestViewController.swift; sourceTree = "<group>"; };
 		D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsCell.swift; sourceTree = "<group>"; };
 		D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsArticle.swift; sourceTree = "<group>"; };
 		D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsViewController.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 		D408D06024C7E96900920A68 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				D408D05E24C7E93C00920A68 /* AuthTestViewController.swift */,
+				D408D06624C7FC8000920A68 /* AuthTestViewController.swift */,
 				4DA1319A24BDE9A0001641F6 /* LoginViewController.swift */,
 				8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */,
 				D408D06424C7ECD800920A68 /* ForgotPassViewController.swift */,
@@ -598,7 +598,6 @@
 				D408D06524C7ECD800920A68 /* ForgotPassViewController.swift in Sources */,
 				8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */,
 				8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */,
-				D408D05F24C7E93C00920A68 /* AuthTestViewController.swift in Sources */,
 				ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */,
 				8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */,
 				D54DA17924C492A6001B82F6 /* BadgeTableViewCell.swift in Sources */,
@@ -615,6 +614,7 @@
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
 				8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */,
 				ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */,
+				D408D06724C7FC8000920A68 /* AuthTestViewController.swift in Sources */,
 				8E97C4DE24BEACD70084978D /* SignUpViewViewController.swift in Sources */,
 				51396A8D2487338C00B85927 /* SceneDelegate.swift in Sources */,
 				8E188C9F24BDED40002FA124 /* DBLastModified.swift in Sources */,

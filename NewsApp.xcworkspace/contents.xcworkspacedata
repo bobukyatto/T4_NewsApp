@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/itp312grp2/Desktop/T4_NewsApp/NewsApp/Controllers/User News/AuthTestViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:NewsApp.xcodeproj">
    </FileRef>
    <FileRef
