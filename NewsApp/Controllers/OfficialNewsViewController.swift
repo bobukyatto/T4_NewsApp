@@ -11,6 +11,11 @@ import UIKit
 class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     
+    var tableList: [String: [OfficialNewsArticle]] = [
+        "The Straits Times": [],
+        "CNA": []
+    ]
+    
     var newsList: [String: [OfficialNewsArticle]] = [
         "The Straits Times": [],
         "CNA": []
@@ -18,7 +23,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNews(delayLoadingAlert: true)
+        loadNews()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,7 +32,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             let indexPath = self.tableView.indexPathForSelectedRow
             
             if (indexPath != nil) {
-                let article = newsList[Array(newsList.keys)[indexPath!.section]]?[indexPath!.row]
+                let article = tableList[Array(tableList.keys)[indexPath!.section]]?[indexPath!.row]
                 detailVC.article = article
             }
         }
@@ -39,17 +44,19 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            loadNews(delayLoadingAlert: false)
+            tableList = newsList
+            
+            self.tableView.reloadData()
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return newsList.count
+        return tableList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section < newsList.count {
-            return newsList[Array(newsList.keys)[section]]!.count
+        if section < tableList.count {
+            return tableList[Array(tableList.keys)[section]]!.count
         }
         
         return 1
@@ -60,8 +67,8 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
         
-        let key = Array(newsList.keys)[indexPath.section]
-        let n = newsList[key]![indexPath.row]
+        let key = Array(tableList.keys)[indexPath.section]
+        let n = tableList[key]![indexPath.row]
         cell.dateLabel!.text = dateFormatter.string(from: n.publishDate)
         cell.titleLabel!.text = n.title
         
@@ -80,25 +87,18 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section < newsList.count {
-            return Array(newsList.keys)[section]
+        if section < tableList.count {
+            return Array(tableList.keys)[section]
         }
         
         return nil
     }
     
-    func loadNews(delayLoadingAlert: Bool) {
-        // Delay alert present if initial load to avoid overla with launchScreen animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + (delayLoadingAlert ? 2 : 0), execute: {
-            self.loadingAlertPresent(loadingText: "Loading List...")
-        })
+    func loadNews() {
+        self.loadingAlertPresent(loadingText: "Loading List...")
         
         OfficialNewsDataManager().loadNews(onComplete: {
             results in
-            
-            for item in self.newsList {
-                self.newsList[item.key] = []
-            }
             
             for item in results {
                 if item.source.lowercased() == "cna" {
@@ -108,6 +108,8 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
                     self.newsList["The Straits Times"]?.append(item)
                 }
             }
+            
+            self.tableList = self.newsList
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -123,26 +125,26 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         loadingAlertPresent(loadingText: "Searching...")
         
         if searchText != "" {
-            for item in self.newsList {
-                self.newsList[item.key] = []
+            for item in self.tableList {
+                self.tableList[item.key] = []
             }
             
             taskGroup.enter()
             officialNewsDM.newsSearchApi(params: "qInTitle=\(searchText)&domains=straitstimes.com&pageSize=100", onComplete: {
-                results in self.newsList["The Straits Times"]?.append(contentsOf: results)
+                results in self.tableList["The Straits Times"]?.append(contentsOf: results)
                 taskGroup.leave()
             })
             
             taskGroup.enter()
             officialNewsDM.newsSearchApi(params: "qInTitle=\(searchText)&domains=channelnewsasia.com&pageSize=100", onComplete: {
-                results in self.newsList["CNA"]?.append(contentsOf: results)
+                results in self.tableList["CNA"]?.append(contentsOf: results)
                 taskGroup.leave()
             })
         }
         
         taskGroup.notify(queue: .main, execute: {
-            for item in self.newsList {
-                self.newsList[item.key]?.sort(by: { $0.publishDate > $1.publishDate })
+            for item in self.tableList {
+                self.tableList[item.key]?.sort(by: { $0.publishDate > $1.publishDate })
             }
             
             self.tableView.reloadData()
