@@ -15,7 +15,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNews(loadOnStart: true)
+        loadNews(delayLoadingAlert: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,7 +36,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            loadNews(loadOnStart: false)
+            loadNews(delayLoadingAlert: false)
         }
     }
     
@@ -71,9 +71,9 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    func loadNews(loadOnStart: Bool) {
-        // Delay alert present if initial load to avoid overlap with launchScreen animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + (loadOnStart ? 1 : 0), execute: {
+    func loadNews(delayLoadingAlert: Bool) {
+        // Delay alert present if initial load to avoid overla with launchScreen animation
+        DispatchQueue.main.asyncAfter(deadline: .now() + (delayLoadingAlert ? 2 : 0), execute: {
             self.loadingAlertPresent(loadingText: "Loading...")
         })
         
@@ -124,6 +124,6 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
         loadingIndicator.startAnimating();
 
         loadAlert.view.addSubview(loadingIndicator)
-        self.present(loadAlert, animated: true, completion: nil)
+        self.present(loadAlert, animated: false, completion: nil)
     }
 }
