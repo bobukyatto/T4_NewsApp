@@ -175,7 +175,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Signout"/>
                                         <connections>
-                                            <action selector="signoutTap:" destination="jgg-LM-ZG6" eventType="touchUpInside" id="lxz-BR-hyS"/>
+                                            <action selector="signoutTap:" destination="jgg-LM-ZG6" eventType="touchUpInside" id="DBY-mx-pOh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -190,7 +190,7 @@
                         <viewLayoutGuide key="safeArea" id="DA8-4Q-E97"/>
                     </view>
                     <connections>
-                        <outlet property="signoutButton" destination="zqI-fC-mq0" id="VCc-v1-SCf"/>
+                        <outlet property="signoutButton" destination="zqI-fC-mq0" id="B7q-ce-vUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScC-Gs-Fm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
