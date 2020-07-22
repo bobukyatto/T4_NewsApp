@@ -44,6 +44,7 @@
 		D408D05B24C7E0E200920A68 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D408D05A24C7E0E200920A68 /* Profile.storyboard */; };
 		D408D05F24C7E93C00920A68 /* AuthTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D05E24C7E93C00920A68 /* AuthTestViewController.swift */; };
 		D408D06324C7EA9D00920A68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D06224C7EA9D00920A68 /* ProfileViewController.swift */; };
+		D408D06524C7ECD800920A68 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408D06424C7ECD800920A68 /* ForgotPassViewController.swift */; };
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
 		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
@@ -120,6 +121,7 @@
 		D408D05A24C7E0E200920A68 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		D408D05E24C7E93C00920A68 /* AuthTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthTestViewController.swift; path = "/Users/itp312grp2/Desktop/T4_NewsApp/NewsApp/Controllers/User News/AuthTestViewController.swift"; sourceTree = "<absolute>"; };
 		D408D06224C7EA9D00920A68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D408D06424C7ECD800920A68 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsCell.swift; sourceTree = "<group>"; };
 		D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsArticle.swift; sourceTree = "<group>"; };
 		D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				D408D05E24C7E93C00920A68 /* AuthTestViewController.swift */,
 				4DA1319A24BDE9A0001641F6 /* LoginViewController.swift */,
 				8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */,
+				D408D06424C7ECD800920A68 /* ForgotPassViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */,
 				4DA1319B24BDE9A0001641F6 /* LoginViewController.swift in Sources */,
 				D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */,
+				D408D06524C7ECD800920A68 /* ForgotPassViewController.swift in Sources */,
 				8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */,
 				8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */,
 				D408D05F24C7E93C00920A68 /* AuthTestViewController.swift in Sources */,

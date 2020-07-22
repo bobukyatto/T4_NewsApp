@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  ForgotPassViewController.swift
 //  NewsApp
 //
 //  Created by ITP312Grp2 on 22/7/20.
@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
+class ForgotPassViewController: UIViewController {
 
-class ProfileViewController: UIViewController {
+    @IBOutlet weak var ErrorLabel: UILabel!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var sendLink: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,5 +31,9 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func sendLinkTap(_ sender: Any) {
+    
+    }
+    
 }
