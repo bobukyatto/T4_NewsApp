@@ -10,6 +10,7 @@ target 'NewsApp' do
   pod 'FirebaseFirestoreSwift'
   pod 'SwiftyGif'
   pod 'Firebase/Auth'
+  pod 'SwiftSoup'
 
   target 'NewsAppTests' do
     inherit! :search_paths
