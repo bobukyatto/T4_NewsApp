@@ -21,11 +21,11 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
+                        <segue destination="z7M-Fc-Lbm" kind="relationship" relationship="viewControllers" id="7gt-8k-aEU"/>
                         <segue destination="AEQ-zc-bhM" kind="relationship" relationship="viewControllers" id="5dU-h9-43M"/>
                         <segue destination="oci-wA-mxy" kind="relationship" relationship="viewControllers" id="qyz-K5-dEd"/>
                         <segue destination="yHF-wG-9CG" kind="relationship" relationship="viewControllers" id="oZn-7P-DAk"/>
                         <segue destination="fVD-F1-lqY" kind="relationship" relationship="viewControllers" id="uGV-Ym-AuG"/>
-                        <segue destination="z7M-Fc-Lbm" kind="relationship" relationship="viewControllers" id="7gt-8k-aEU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
