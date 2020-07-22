@@ -41,7 +41,6 @@
 		9B6EBDB29E0E71EAFC283DCD /* Pods_NewsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E855A73840046D66B58A8 /* Pods_NewsAppTests.framework */; };
 		A9B6C49CF4B895F92CC1E3D6 /* Pods_NewsApp_NewsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907F092C9BDB749524CB4457 /* Pods_NewsApp_NewsAppUITests.framework */; };
 		ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */; };
-		ABDD3F6B24C7417E001BAF0F /* UserNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6A24C7417E001BAF0F /* UserNewsTableViewCell.swift */; };
 		ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */; };
 		D408D05B24C7E0E200920A68 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D408D05A24C7E0E200920A68 /* Profile.storyboard */; };
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
@@ -115,7 +114,6 @@
 		8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		907F092C9BDB749524CB4457 /* Pods_NewsApp_NewsAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp_NewsAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsDataManager.swift; sourceTree = "<group>"; };
-		ABDD3F6A24C7417E001BAF0F /* UserNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsTableViewCell.swift; sourceTree = "<group>"; };
 		ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsFormViewController.swift; sourceTree = "<group>"; };
 		AF02E816DA1B632421C1502A /* Pods-NewsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3FA0FEFE127F27E73C7315B /* Pods-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				51396A952487338D00B85927 /* Assets.xcassets */,
 				51396A972487338D00B85927 /* LaunchScreen.storyboard */,
 				51396A9A2487338D00B85927 /* Info.plist */,
-				D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */,
 				8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */,
 				8E1BF26724AF117300071367 /* Gif */,
 			);
@@ -280,9 +277,9 @@
 		ABDD3F6924C74139001BAF0F /* User News */ = {
 			isa = PBXGroup;
 			children = (
+				D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */,
 				D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */,
 				D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */,
-				ABDD3F6A24C7417E001BAF0F /* UserNewsTableViewCell.swift */,
 				ABDD3F6C24C7493E001BAF0F /* UserNewsFormViewController.swift */,
 			);
 			path = "User News";
@@ -588,7 +585,6 @@
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
 				D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */,
 				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
-				ABDD3F6B24C7417E001BAF0F /* UserNewsTableViewCell.swift in Sources */,
 				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E188CA124BDEE8E002FA124 /* DBLastModifiedDataManager.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
