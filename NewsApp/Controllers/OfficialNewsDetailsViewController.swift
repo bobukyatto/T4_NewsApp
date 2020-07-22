@@ -103,10 +103,11 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
                 
                 switch self.article?.source.lowercased() {
                     case "the straits times":
-                        try! doc.select(".field-name-body figure.image img").attr("width", "\(self.contentTxtViewWidth)")
-                        try! doc.select(".field-name-body figure.image img").attr("height", "")
+                        try! doc.select(".field .field-item figure.image img").attr("width", "\(self.contentTxtViewWidth)")
+                        try! doc.select(".field .field-item figure.image img").attr("height", "")
+                        try! doc.select(".field .field-item h4").attr("style", "color: #2f3d4c;")
                         
-                        htmlData = NSString(string: try! doc.select(".field-name-body p, .field-name-body h4:not(.related-story-headline), .field-name-body figure.image img").outerHtml()).data(using: String.Encoding.utf8.rawValue)
+                        htmlData = NSString(string: try! doc.select(".field .field-item p, .field .field-item h4:not(.related-story-headline, .label-above), .field .field-item figure.image img").outerHtml()).data(using: String.Encoding.utf8.rawValue)
                         break;
                     case "cna":
                         htmlData = NSString(string: try! doc.select(".c-rte--article > p").outerHtml()).data(using: String.Encoding.utf8.rawValue)
@@ -126,7 +127,6 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
                     paraStyle.alignment = .justified
                     paraStyle.paragraphSpacing = 17.0
                     
-                    
                     let attr = [
                         NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15.0),
                         NSAttributedString.Key.paragraphStyle: paraStyle
@@ -139,8 +139,6 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
                     self.dismiss(animated: false, completion: nil)
                 }
             }
-
-            print(self.article?.url ?? "")
         }).resume()
     }
     
