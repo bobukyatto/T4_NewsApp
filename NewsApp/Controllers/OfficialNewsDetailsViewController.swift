@@ -105,12 +105,18 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
                     case "the straits times":
                         try! doc.select(".field .field-item figure.image img").attr("width", "\(self.contentTxtViewWidth)")
                         try! doc.select(".field .field-item figure.image img").attr("height", "")
-                        try! doc.select(".field .field-item h4").attr("style", "color: #2f3d4c;")
+                        try! doc.select(".field .field-item h4").attr("style", "color: #36627b; font-size: 17px; font-weight: 900; font-family: Arial;")
+                        try! doc.select(".field .field-item p:contains(Get The Straits Times app)").html("")
+                        try! doc.select(".field .field-item p:contains(Read the latest on)").html("")
+                        try! doc.select(".field .field-item p").attr("style", "font-size: 16px; font-family: Arial;")
                         
-                        htmlData = NSString(string: try! doc.select(".field .field-item p, .field .field-item h4:not(.related-story-headline, .label-above), .field .field-item figure.image img").outerHtml()).data(using: String.Encoding.utf8.rawValue)
+                        htmlData = NSString(string: try! doc.select(".field .field-item p:contains( ), .field .field-item h4:not(.related-story-headline, .label-above), .field .field-item figure.image img").outerHtml()).data(using: String.Encoding.utf8.rawValue)
                         break;
                     case "cna":
-                        htmlData = NSString(string: try! doc.select(".c-rte--article > p").outerHtml()).data(using: String.Encoding.utf8.rawValue)
+                        try! doc.select(".c-rte--article > p:contains(subscribe to our Telegram channel for the latest updates)").html("")
+                        try! doc.select(".c-rte--article > p").attr("style", "font-size: 16px; font-family: Arial;")
+                        
+                        htmlData = NSString(string: try! doc.select(".c-rte--article > p:contains( )").outerHtml()).data(using: String.Encoding.utf8.rawValue)
                         break;
                     default:
                         break;
@@ -121,18 +127,6 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
                 if (htmlData != nil) {
                     let attrOpt = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
                     let attrStr = try! NSMutableAttributedString(data: htmlData!, options: attrOpt, documentAttributes: nil)
-                    
-                    // Set AttributedString style (xCode TextView Attributed Style has a bug where style does not apply)
-                    let paraStyle = NSMutableParagraphStyle()
-                    paraStyle.alignment = .justified
-                    paraStyle.paragraphSpacing = 17.0
-                    
-                    let attr = [
-                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15.0),
-                        NSAttributedString.Key.paragraphStyle: paraStyle
-                    ]
-                    
-                    attrStr.addAttributes(attr, range: NSMakeRange(0, attrStr.length))
 
                     self.contentTxtView.attributedText = attrStr
                     
