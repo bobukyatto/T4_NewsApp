@@ -40,6 +40,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kR3-NN-JX2" kind="show" identifier="showBadgeType" id="TWp-Eh-TUk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -66,20 +69,67 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="978.34821428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Category-->
         <scene sceneID="zgH-fq-L0T">
             <objects>
-                <viewController id="kR3-NN-JX2" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NES-XS-diN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController title="Category" id="kR3-NN-JX2" customClass="BadgeCategoryViewController" customModule="News_Reveal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtn-pw-SqR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vrs-bW-h7B">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="gn6-Ga-kTt">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="badgeTypeCell" id="swH-Z7-pfh" customClass="badgeTypeCell" customModule="News_Reveal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="swH-Z7-pfh" id="4py-yN-DxS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGL-Pf-eRg">
+                                                    <rect key="frame" x="231" y="38" width="163" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="badgeTypeTitleLabel" destination="DGL-Pf-eRg" id="WHH-ph-T4S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="kR3-NN-JX2" id="CEJ-z5-CJ7"/>
+                                    <outlet property="delegate" destination="kR3-NN-JX2" id="1wu-KF-SCe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vrs-bW-h7B" firstAttribute="top" secondItem="Syu-N5-0US" secondAttribute="top" id="QYv-oU-3PG"/>
+                            <constraint firstItem="Vrs-bW-h7B" firstAttribute="leading" secondItem="Syu-N5-0US" secondAttribute="leading" id="sFu-Cr-Pnr"/>
+                            <constraint firstItem="Vrs-bW-h7B" firstAttribute="trailing" secondItem="Syu-N5-0US" secondAttribute="trailing" id="xP0-AB-dv8"/>
+                            <constraint firstItem="Vrs-bW-h7B" firstAttribute="bottom" secondItem="Syu-N5-0US" secondAttribute="bottom" id="yi2-eY-uGv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Syu-N5-0US"/>
                     </view>
+                    <navigationItem key="navigationItem" id="z9Z-sW-17D"/>
+                    <connections>
+                        <outlet property="tableView" destination="Vrs-bW-h7B" id="NJl-aa-kHv"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NES-XS-diN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="978"/>
+            <point key="canvasLocation" x="728.98550724637687" y="977.67857142857133"/>
         </scene>
     </scenes>
 </document>
