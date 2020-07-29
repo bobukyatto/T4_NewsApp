@@ -48,6 +48,9 @@
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
 		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
+		D483C5EA24D1160700271089 /* BadgeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */; };
+		D483C5EC24D11C8A00271089 /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5EB24D11C8A00271089 /* BadgeType.swift */; };
+		D483C5EE24D1212D00271089 /* badgeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5ED24D1212D00271089 /* badgeTypeCell.swift */; };
 		D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */; };
 		D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17424C3CDEC001B82F6 /* Badge.swift */; };
 		D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */; };
@@ -125,6 +128,9 @@
 		D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsCell.swift; sourceTree = "<group>"; };
 		D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsArticle.swift; sourceTree = "<group>"; };
 		D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsViewController.swift; sourceTree = "<group>"; };
+		D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCategoryViewController.swift; sourceTree = "<group>"; };
+		D483C5EB24D11C8A00271089 /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
+		D483C5ED24D1212D00271089 /* badgeTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = badgeTypeCell.swift; sourceTree = "<group>"; };
 		D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsDetailViewController.swift; sourceTree = "<group>"; };
 		D54DA17424C3CDEC001B82F6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +245,8 @@
 				8E188CA224BE2C52002FA124 /* OfficialNewsDetailsViewController.swift */,
 				D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */,
 				D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */,
+				D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */,
+				D483C5ED24D1212D00271089 /* badgeTypeCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 				8E188C9E24BDED40002FA124 /* DBLastModified.swift */,
 				8E97C4DF24BEAEB50084978D /* Constants.swift */,
 				D54DA17424C3CDEC001B82F6 /* Badge.swift */,
+				D483C5EB24D11C8A00271089 /* BadgeType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 				D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */,
 				8E1DDECE24AC2E570000933E /* OfficialNewsDataManager.swift in Sources */,
 				8E1BF26424AF0AC000071367 /* LogoAnimationUIView.swift in Sources */,
+				D483C5EE24D1212D00271089 /* badgeTypeCell.swift in Sources */,
 				D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */,
 				4DA1319B24BDE9A0001641F6 /* LoginViewController.swift in Sources */,
 				D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */,
@@ -612,7 +622,9 @@
 				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E188CA124BDEE8E002FA124 /* DBLastModifiedDataManager.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
+				D483C5EC24D11C8A00271089 /* BadgeType.swift in Sources */,
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
+				D483C5EA24D1160700271089 /* BadgeCategoryViewController.swift in Sources */,
 				8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */,
 				ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */,
 				8E97C4DE24BEACD70084978D /* SignUpViewViewController.swift in Sources */,

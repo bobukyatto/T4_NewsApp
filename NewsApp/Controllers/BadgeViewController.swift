@@ -16,6 +16,8 @@ class BadgeViewController: UIViewController,UITableViewDelegate, UITableViewData
     let db = Firestore.firestore()
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,6 +87,23 @@ class BadgeViewController: UIViewController,UITableViewDelegate, UITableViewData
         
     }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue,sender: Any?){
+        if(segue.identifier == "showBadgeType")
+        {
+            let detailViewController = segue.destination as! BadgeCategoryViewController
+            let myIndexPath = self.tableView.indexPathForSelectedRow
+            
+            if(myIndexPath != nil){
+                // Set the movieItem field with the movi
+                // object selected by the user.
+                let badgeTypeCategory = BadgeCategories[myIndexPath!.row].badgeCategoryName
+                //let badgeTypeCategoryID = BadgeCategories[myIndexPath!.row].badgecategoryID
+                detailViewController.BadgeCategory = badgeTypeCategory
+            }
+        }
+    }
     
 
     /*
