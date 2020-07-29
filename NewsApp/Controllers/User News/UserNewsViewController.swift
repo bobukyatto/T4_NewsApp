@@ -45,7 +45,7 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    @IBOutlet weak var tableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

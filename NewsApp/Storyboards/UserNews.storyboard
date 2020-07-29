@@ -36,21 +36,21 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1o-lr-rqb">
-                                                    <rect key="frame" x="166" y="11" width="71" height="21"/>
+                                                    <rect key="frame" x="166" y="11" width="194" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl5-Rq-6TB">
-                                                    <rect key="frame" x="166" y="40" width="78" height="21"/>
+                                                    <rect key="frame" x="166" y="40" width="194" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UsernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R42-gI-MVq">
-                                                    <rect key="frame" x="166" y="82" width="102" height="17"/>
+                                                    <rect key="frame" x="166" y="82" width="194" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -65,6 +65,10 @@
                                             </connections>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="UDateLabel" destination="Sl5-Rq-6TB" id="Ti0-bv-JBo"/>
+                                            <outlet property="UNameLabel" destination="x1o-lr-rqb" id="NBv-SU-OTA"/>
+                                            <outlet property="UNewsImage" destination="AC0-vu-p3t" id="fgf-Bg-Crt"/>
+                                            <outlet property="UsernameLabel" destination="R42-gI-MVq" id="yNm-LB-C1u"/>
                                             <segue destination="2mp-g2-w8V" kind="show" identifier="ShowUserNewsDetails" id="bLp-hv-2RG"/>
                                         </connections>
                                     </tableViewCell>
@@ -85,17 +89,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
-                    <toolbarItems>
-                        <barButtonItem title="Upload News" id="zwT-vm-vHO">
-                            <connections>
-                                <segue destination="s5x-lb-V9b" kind="show" id="W8N-Pq-ebR"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="newsTableView" destination="LaY-dK-YVo" id="KmE-hm-bP7"/>
-                        <outlet property="tableView" destination="LaY-dK-YVo" id="JA6-5V-fyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
