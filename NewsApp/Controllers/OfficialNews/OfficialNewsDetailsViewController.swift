@@ -80,7 +80,7 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
             synth.pauseSpeaking(at: .immediate)
             
             (sender as AnyObject).setTitle("Continue Reading", for: .normal)
-            (sender as AnyObject).setTitleColor(.systemBlue, for: .normal)
+            (sender as AnyObject).setTitleColor(.systemGreen, for: .normal)
         }
     }
     

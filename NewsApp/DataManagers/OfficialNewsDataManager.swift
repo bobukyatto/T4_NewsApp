@@ -181,7 +181,9 @@ class OfficialNewsDataManager: NSObject {
     
     private func deleteMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
         for item in articleList {
-            db.collection("officialNews").document(item.id!).delete()
+            if (item.id != nil) {
+                db.collection("officialNews").document(item.id!).delete()
+            }
         }
         
         print("OfficialNewsDataManager: Delete successful!")
