@@ -11,40 +11,27 @@ import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-    
-        
     @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var email: UITextField!
-    
     @IBOutlet weak var password: UITextField!
-   
-    
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpElements()
-        
-        
-
         // Do any additional setup after loading the view.
     }
     
     func setUpElements() {
-        
         errorLabel.alpha = 0
     }
     
     func validateFields() -> String? {
-    
-    // Check that all fields are filled in
-    if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-    
-        return "Please fill in all fields"
-        
+        // Check that all fields are filled in
+        if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields"
         }
         
         return nil
@@ -52,54 +39,33 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginTap(_ sender: Any) {
-        
-        
         // Validate the fields
         let error = validateFields()
         
         if error != nil {
-            
             // There was an error
             showError(error!)
-            
         }
-        
         else {
             let finalEmail = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let finalPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // Signing in the User
-            Auth.auth().signIn(withEmail: finalEmail, password: finalPassword) { (result, error) in
-                if error != nil {
-        
+            UserDataManager.signIn(User(uid: nil, email: finalEmail, password: finalPassword, fullName: nil), onComplete: {
+                result in
+                
+                if (result == nil) {
                     self.showError("Invalid Username/Password")
-                
                 }
-                
                 else {
-                    
-                    self.transitiontoHome()
-            
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
-            }
+            })
         }
     }
             
     func showError(_ message: String) {
-        
         errorLabel.text = message
         errorLabel.alpha = 1
-        
     }
-    
-    func transitiontoHome() {
-        
-        let authtestViewController =
-            storyboard?.instantiateViewController(identifier:
-                Constants.Storyboard.authtestViewController) as? AuthTestViewController
-        
-        view.window?.rootViewController = authtestViewController
-        view.window?.makeKeyAndVisible()
-    }
-    
 }

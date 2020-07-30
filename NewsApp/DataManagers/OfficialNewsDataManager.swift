@@ -11,10 +11,10 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class OfficialNewsDataManager: NSObject {
-    let db = Firestore.firestore()
+    static let db = Firestore.firestore()
     
     // Store or retrive from DB with 60 mins interval check to prevent hitting API call limit
-    func loadNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
+    static func loadNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
         let taskGroup = DispatchGroup()
         let dbLastModifiedDM = DBLastModifiedDataManager()
         
@@ -77,7 +77,7 @@ class OfficialNewsDataManager: NSObject {
         })
     }
     
-    func newsSearchApi(params: String?, onComplete: (([OfficialNewsArticle]) -> Void)?) {
+    static func newsSearchApi(params: String?, onComplete: (([OfficialNewsArticle]) -> Void)?) {
         let url = "https://newsapi.org/v2/everything?\(params ?? "")&apiKey=3837e3a4044b4f33ae22d5d0ecb07a22".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         HTTP.getJSON(url: url, onComplete: {
@@ -113,7 +113,7 @@ class OfficialNewsDataManager: NSObject {
         })
     }
     
-    private func getOfficialNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
+    static private func getOfficialNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
         db.collection("officialNews").getDocuments() {
             (snapshot, err) in
             
@@ -138,7 +138,7 @@ class OfficialNewsDataManager: NSObject {
         }
     }
     
-    private func insertMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
+    static private func insertMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
         for item in articleList {
             var ref: DocumentReference? = nil
             
@@ -161,7 +161,7 @@ class OfficialNewsDataManager: NSObject {
         }
     }
     
-    private func updateOfficialNews(_ article: OfficialNewsArticle) {
+    static private func updateOfficialNews(_ article: OfficialNewsArticle) {
         if article.id != nil && article.id != "" {
             try? db.collection("officialNews").document(article.id ?? "").setData(from: article, encoder: Firestore.Encoder()) {
                 err in
@@ -179,7 +179,7 @@ class OfficialNewsDataManager: NSObject {
         }
     }
     
-    private func deleteMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
+    static private func deleteMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
         for item in articleList {
             if (item.id != nil) {
                 db.collection("officialNews").document(item.id!).delete()

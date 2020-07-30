@@ -97,7 +97,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     func loadNews() {
         self.loadingAlertPresent(loadingText: "Loading List...")
         
-        OfficialNewsDataManager().loadNews(onComplete: {
+        OfficialNewsDataManager.loadNews(onComplete: {
             results in
             
             for item in results {
@@ -120,7 +120,6 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     
     func searchNews(searchText: String) {
         let taskGroup = DispatchGroup()
-        let officialNewsDM = OfficialNewsDataManager()
         
         loadingAlertPresent(loadingText: "Searching...")
         
@@ -130,13 +129,13 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             }
             
             taskGroup.enter()
-            officialNewsDM.newsSearchApi(params: "qInTitle=\(searchText)&domains=straitstimes.com&pageSize=100", onComplete: {
+            OfficialNewsDataManager.newsSearchApi(params: "qInTitle=\(searchText)&domains=straitstimes.com&pageSize=100", onComplete: {
                 results in self.tableList["The Straits Times"]?.append(contentsOf: results)
                 taskGroup.leave()
             })
             
             taskGroup.enter()
-            officialNewsDM.newsSearchApi(params: "qInTitle=\(searchText)&domains=channelnewsasia.com&pageSize=100", onComplete: {
+            OfficialNewsDataManager.newsSearchApi(params: "qInTitle=\(searchText)&domains=channelnewsasia.com&pageSize=100", onComplete: {
                 results in self.tableList["CNA"]?.append(contentsOf: results)
                 taskGroup.leave()
             })

@@ -34,14 +34,12 @@ class SignUpViewController: UIViewController {
     }
     
     func validateFields() -> String? {
-        
         // Check that all fields are filled in
         if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             username.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
         
             return "Please fill in all fields"
-            
         }
         
         // Check that passwords match
@@ -51,8 +49,6 @@ class SignUpViewController: UIViewController {
         
         return nil
     }
-    
-
     
     @IBAction func signupTap(_ sender: Any) {
         // Validate the fields
@@ -69,45 +65,22 @@ class SignUpViewController: UIViewController {
             let finalPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // Create the user
-            Auth.auth().createUser(withEmail: finalEmail, password: finalPassword) {
-                (result, err) in
+            UserDataManager.createUser(User(uid: nil, email: finalEmail, password: finalPassword, fullName: fullname), onComplete: {
+                err in
                 
-                if err != nil {
-                    // There was an error
-                    self.showError("Error creating User")
+                if (err != nil) {
+                    self.showError(err!)
                 }
                 else {
-                    let db = Firestore.firestore()
-                    
-                    db.collection("users").addDocument(data: [ "fullname": fullname, "uid": result!.user.uid ]) {
-                        (error) in
-                            
-                        if error != nil {
-                            self.showError("Error saving user data")
-                        }
-                    }
-                    
-                    self.transitiontoLogin()
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
-            }
+            })
         }
     }
     
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-    
-    func transitiontoLogin() {
-        
-        let loginViewController = storyboard?.instantiateViewController(
-                identifier: Constants.Storyboard.loginViewController
-            ) as? LoginViewController
-        
-        view.window?.rootViewController = loginViewController
-        view.window?.makeKeyAndVisible()
-        
-        showAlert()
     }
     
     func showAlert() {
