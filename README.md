@@ -23,6 +23,11 @@
 
 ***
 
+### Collaborators Note
+Use `UserDataManager.loggedIn` to get current logged in user info, returns `nil` if not currently logged in.
+
+***
+
 ##### Collaborator's Github Profile
 * [Joel [ JDesignEra ]](https://github.com/JDesignEra)
 * [Sharon [ bobukyatto ]](https://github.com/bobukyatto)
