@@ -18,15 +18,16 @@ class MainUITabBarController: UITabBarController {
         
         tabItems = self.tabBar.items
         
-        //view.addSubview(logoAnimationUIView)
-        //logoAnimationUIView.pinEdgesToSuperView()
-        //logoAnimationUIView.logoGifImageView.delegate = self
+        view.addSubview(logoAnimationUIView)
+        logoAnimationUIView.pinEdgesToSuperView()
+        logoAnimationUIView.logoGifImageView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //logoAnimationUIView.logoGifImageView.startAnimatingGif()
+        logoAnimationUIView.logoGifImageView.startAnimatingGif()
+        
         if let items = self.tabBar.items {
             items.forEach {
                 if (UserDataManager.loggedIn == nil && ($0.title == "Bookmarks" || $0.title == "Badges")) {

@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 
 class OfficialNewsDataManager: NSObject {
     static let db = Firestore.firestore()
+    private static let newsRef = db.collection("officialNews")
     
     // Store or retrive from DB with 60 mins interval check to prevent hitting API call limit
     static func loadNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
@@ -113,8 +114,8 @@ class OfficialNewsDataManager: NSObject {
         })
     }
     
-    static private func getOfficialNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
-        db.collection("officialNews").getDocuments() {
+    private static func getOfficialNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
+        newsRef.getDocuments() {
             (snapshot, err) in
             
             var articleList: [OfficialNewsArticle] = []
@@ -138,54 +139,36 @@ class OfficialNewsDataManager: NSObject {
         }
     }
     
-    static private func insertMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
-        for item in articleList {
-            var ref: DocumentReference? = nil
-            
-            ref = try? db.collection("officialNews").addDocument(from: item, encoder: Firestore.Encoder()) {
+    private static func insertMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
+        for (i, item) in articleList.enumerated() {
+            _ = try? self.newsRef.addDocument(from: item, encoder: Firestore.Encoder()) {
                 err in
                 
                 if let err = err {
                     print("OfficialNewsDataManager: \(err)")
                 }
-                else if !(ref?.documentID.isEmpty ?? false) {
-                    let article = OfficialNewsArticle(id: ref?.documentID, source: item.source, title: item.title, desc: item.desc, url: item.url, urlImg: item.urlImg, publishDate: item.publishDate)
-                    
-                    self.updateOfficialNews(article)
-                }
-                else {
-                    ref?.delete()
-                    print("OfficialNewsDataManager: Add unsuccessful!")
-                }
-            }
-        }
-    }
-    
-    static private func updateOfficialNews(_ article: OfficialNewsArticle) {
-        if article.id != nil && article.id != "" {
-            try? db.collection("officialNews").document(article.id ?? "").setData(from: article, encoder: Firestore.Encoder()) {
-                err in
                 
-                if let err = err {
-                    print("OfficialNewsDataManager: \(err)")
-                }
-                else {
-                    print("OfficialNewsDataManager: Updated successfully!")
+                if (i >= articleList.count - 1) {
+                    print("OfficialNewsDataManager: Add successful!")
                 }
             }
         }
-        else {
-            print("OfficialNewsDataManager: Document ID does not exist!")
-        }
     }
     
-    static private func deleteMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
-        for item in articleList {
+    private static func deleteMultiOfficialNews(_ articleList: [OfficialNewsArticle]) {
+        for (i, item) in articleList.enumerated() {
             if (item.id != nil) {
-                db.collection("officialNews").document(item.id!).delete()
+                self.newsRef.document(item.id!).delete() {
+                    err in
+                    
+                    if let err = err {
+                        print("OfficialNewsDataManager: \(err)")
+                    }
+                    else if (i >= articleList.count - 1) {
+                        print("OfficialNewsDataManager: Delete successful!")
+                    }
+                }
             }
         }
-        
-        print("OfficialNewsDataManager: Delete successful!")
     }
 }

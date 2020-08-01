@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FirebaseFirestoreSwift
 
 class OfficialNewsArticle: Codable {
-    var id: String?
+    @DocumentID var id: String? = UUID().uuidString
     var source: String;
     var title: String;
     var desc: String;
