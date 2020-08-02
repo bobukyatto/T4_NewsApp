@@ -44,7 +44,7 @@ class DBLastModifiedDataManager: NSObject {
                 print("DBLastModifiedDataManager: \(err)")
             }
             else {
-                print("DBLastModifiedDataManager: Updated successfully!")
+                print("DBLastModifiedDataManager: Updated successful!")
             }
         }
     }

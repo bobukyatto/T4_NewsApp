@@ -69,8 +69,8 @@
         <!--Profile-->
         <scene sceneID="A6c-YF-9au">
             <objects>
-                <navigationController id="z7M-Fc-Lbm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="user-duotone" landscapeImage="user-duotone" id="xPE-bC-Dfb"/>
+                <navigationController storyboardIdentifier="ProfileNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z7M-Fc-Lbm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-tab" landscapeImage="profile-tab" id="xPE-bC-Dfb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uh5-1S-DnB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -100,8 +100,8 @@
         <!--News-->
         <scene sceneID="GTD-8y-wJR">
             <objects>
-                <navigationController id="AEQ-zc-bhM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="newspaper-duotone" landscapeImage="newspaper-duotone" id="6Rn-4y-SSk"/>
+                <navigationController storyboardIdentifier="NewsNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AEQ-zc-bhM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="news-tab" landscapeImage="news-tab" id="6Rn-4y-SSk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IDd-uZ-nTo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,8 +121,8 @@
         <!--User News-->
         <scene sceneID="oQE-z0-Eq8">
             <objects>
-                <navigationController id="oci-wA-mxy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User News" image="user-newspaper-duotone" landscapeImage="user-newspaper-duotone" id="Cp6-fs-BXi"/>
+                <navigationController storyboardIdentifier="UserNewsNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oci-wA-mxy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User News" image="user news-tab" landscapeImage="user news-tab" id="Cp6-fs-BXi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tbr-lE-HpR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -152,8 +152,8 @@
         <!--Badges-->
         <scene sceneID="yz9-iw-TrC">
             <objects>
-                <navigationController id="fVD-F1-lqY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Badges" image="badge-check-duotone" landscapeImage="badge-check-duotone" id="NlX-6T-uPV"/>
+                <navigationController storyboardIdentifier="BadgesNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fVD-F1-lqY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Badges" image="badges-tab" landscapeImage="badges-tab" id="NlX-6T-uPV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SfW-Hf-a22">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,8 +173,8 @@
         <!--Bookmarks-->
         <scene sceneID="ik6-6h-BSe">
             <objects>
-                <navigationController id="yHF-wG-9CG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bookmarks" image="bookmark-duotone" landscapeImage="bookmark-duotone" id="h7k-Bd-6fi"/>
+                <navigationController storyboardIdentifier="BookmarksNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yHF-wG-9CG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookmarks" image="bookmarks-tab" landscapeImage="bookmarks-tab" id="h7k-Bd-6fi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gvB-rD-vjw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -194,10 +194,10 @@
     </scenes>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
-        <image name="badge-check-duotone" width="30" height="30"/>
-        <image name="bookmark-duotone" width="30" height="30"/>
-        <image name="newspaper-duotone" width="30" height="30"/>
-        <image name="user-duotone" width="30" height="30"/>
-        <image name="user-newspaper-duotone" width="30" height="30"/>
+        <image name="badges-tab" width="30" height="30"/>
+        <image name="bookmarks-tab" width="30" height="30"/>
+        <image name="news-tab" width="30" height="30"/>
+        <image name="profile-tab" width="30" height="30"/>
+        <image name="user news-tab" width="30" height="30"/>
     </resources>
 </document>

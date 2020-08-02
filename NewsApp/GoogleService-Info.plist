@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>770114797322-fi6ak7k4luc47pidcp1jhqnsprta3jg9.apps.googleusercontent.com</string>
+	<string>52219562954-1pob603qmmbie9s7vlrs4412toh49h14.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.770114797322-fi6ak7k4luc47pidcp1jhqnsprta3jg9</string>
+	<string>com.googleusercontent.apps.52219562954-1pob603qmmbie9s7vlrs4412toh49h14</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDeOCDbZZ5QSvT40OtcOGLarIb9XxQFfsA</string>
+	<string>AIzaSyDqrfHqMjMcoogPxiFjRdT4VGibS3WRCno</string>
 	<key>GCM_SENDER_ID</key>
-	<string>770114797322</string>
+	<string>52219562954</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>T4.NewsApp</string>
 	<key>PROJECT_ID</key>
-	<string>newsreveal-fc24a</string>
+	<string>news-reveal</string>
 	<key>STORAGE_BUCKET</key>
-	<string>newsreveal-fc24a.appspot.com</string>
+	<string>news-reveal.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:770114797322:ios:5ec8d23136ce2eb2aa84f3</string>
+	<string>1:52219562954:ios:76f0aa2f507e649d711d33</string>
 	<key>DATABASE_URL</key>
-	<string>https://newsreveal-fc24a.firebaseio.com</string>
+	<string>https://news-reveal.firebaseio.com</string>
 </dict>
 </plist>

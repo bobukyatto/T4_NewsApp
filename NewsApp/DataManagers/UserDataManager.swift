@@ -2,6 +2,7 @@
 //  UserDataManager.swift
 //  NewsApp
 //
+//  Created by Joel on 31/6/20.
 //  Copyright © 2020 M02-4. All rights reserved.
 //
 
@@ -10,15 +11,26 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
+protocol UserManagerDelegate: class {
+    func loggedInDidChange(newVal: User?)
+}
+
 class UserDataManager {
     static var db = Firestore.firestore()
     static var fbAuth = Auth.auth()
+    
+    static weak var delegate: UserManagerDelegate?
+    static let shared = UserDataManager.self
     
     /*
     * Use this to check for logged in user instead of fbAuth.currentUser,
     * easier to expand on if required additional field for user data to be retrieved too.
     */
-    static var loggedIn: User?
+    static var loggedIn: User? {
+        didSet {
+            delegate?.loggedInDidChange(newVal: loggedIn)
+        }
+    }
     
     static func signOut() {
         do {
@@ -26,7 +38,7 @@ class UserDataManager {
             loggedIn = nil
         }
         catch let err as NSError {
-            print("UuserDataManager: \(err)")
+            print("UserDataManager: \(err)")
         }
     }
     

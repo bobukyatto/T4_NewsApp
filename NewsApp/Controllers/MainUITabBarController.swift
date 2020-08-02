@@ -9,14 +9,22 @@
 import UIKit
 import SwiftyGif
 
-class MainUITabBarController: UITabBarController {
-    let logoAnimationUIView = LogoAnimationUIView()
-    var tabItems: [UITabBarItem]?
+class MainUITabBarController: UITabBarController, UITabBarControllerDelegate {
+    private let logoAnimationUIView = LogoAnimationUIView()
+    private var tabItems: [UITabBarItem]?
+    private var vcs: [UIViewController]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabItems = self.tabBar.items
+        self.tabItems = self.tabBar.items
+        self.vcs = [
+            storyboard!.instantiateViewController(withIdentifier: "BookmarksNavigation"),
+            storyboard!.instantiateViewController(withIdentifier: "BadgesNavigation")
+        ]
+        
+        vcs?[0].tabBarItem = tabItems?[3]
+        vcs?[1].tabBarItem = tabItems?[4]
         
         view.addSubview(logoAnimationUIView)
         logoAnimationUIView.pinEdgesToSuperView()
@@ -28,16 +36,25 @@ class MainUITabBarController: UITabBarController {
         
         logoAnimationUIView.logoGifImageView.startAnimatingGif()
         
-        if let items = self.tabBar.items {
-            items.forEach {
-                if (UserDataManager.loggedIn == nil && ($0.title == "Bookmarks" || $0.title == "Badges")) {
-                    $0.isEnabled = false
-                }
-                else {
-                    $0.isEnabled = true
-                }
+        UserDataManager.shared.delegate = self
+        updateTabItems()
+    }
+    
+    func updateTabItems() {
+        if tabItems != nil && vcs != nil {
+            if UserDataManager.loggedIn == nil && self.viewControllers?.count ?? 0 > 4 {
+                self.viewControllers?.removeLast(2)
+            }
+            else if self.viewControllers?.count ?? 0 < 5 {
+                self.viewControllers?.append(contentsOf: vcs!)
             }
         }
+    }
+}
+
+extension MainUITabBarController: UserManagerDelegate {
+    func loggedInDidChange(newVal: User?) {
+        updateTabItems()
     }
 }
 

@@ -65,9 +65,8 @@ class OfficialNewsDataManager: NSObject {
         })
         
         taskGroup.notify(queue: .main, execute: {
-            newsArticles.sort(by: { $0.publishDate > $1.publishDate })
-            
             if updateFlag {
+                newsArticles.sort(by: { $0.publishDate > $1.publishDate })
                 self.deleteMultiOfficialNews(delArticles)
                 self.insertMultiOfficialNews(newsArticles)
                 
@@ -115,7 +114,7 @@ class OfficialNewsDataManager: NSObject {
     }
     
     private static func getOfficialNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
-        newsRef.getDocuments() {
+        newsRef.order(by: "publishDate").getDocuments() {
             (snapshot, err) in
             
             var articleList: [OfficialNewsArticle] = []
@@ -131,8 +130,6 @@ class OfficialNewsDataManager: NSObject {
                         articleList.append(item!)
                     }
                 }
-                
-                articleList.sort(by: { $0.publishDate > $1.publishDate })
             }
             
             onComplete?(articleList)
