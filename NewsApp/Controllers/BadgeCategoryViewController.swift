@@ -46,7 +46,7 @@ class BadgeCategoryViewController: UIViewController, UITableViewDelegate, UITabl
         let badgeTypeRef = db.collection("badgeType")
 
         // Create a query against the collection.
-        let query = badgeTypeRef.whereField("badgeCategory", isEqualTo: "3k9VU17auILyTXwwjU2t")
+        let query = badgeTypeRef.whereField("badgeCategory", isEqualTo: BadgeCategoryID)
         
         query.getDocuments() { (querySnapshot, err) in
             if let err = err {

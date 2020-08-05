@@ -11,12 +11,14 @@ import UIKit
 class Badge: NSObject {
     //For main badge category page
     
+    var badgeCategoryID:String
     var badgeCategoryName:String
     var badgeCategoryImage:String
     var badgeCategoryProgressionCurrent: Int
     var badgeCategoryProgressionMax: Int
     
-    init(Name:String, Image:String, ProgressionCurrent:Int, ProgressionMax:Int ){
+    init(ID:String,Name:String, Image:String, ProgressionCurrent:Int, ProgressionMax:Int ){
+        self.badgeCategoryID = ID
         self.badgeCategoryName = Name
         self.badgeCategoryImage = Image
         self.badgeCategoryProgressionCurrent = ProgressionCurrent

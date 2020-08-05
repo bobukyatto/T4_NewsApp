@@ -29,9 +29,10 @@ class BadgeViewController: UIViewController,UITableViewDelegate, UITableViewData
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
+                    let badgeID = document.documentID
                     let badgeTitle = document.data()["categoryTitle"]! as! String
                     let badgeImage = document.data()["categoryImage"]! as! String
-                    self.BadgeCategories.append(Badge(Name: badgeTitle, Image: badgeImage, ProgressionCurrent:10 , ProgressionMax: 15))
+                    self.BadgeCategories.append(Badge(ID: badgeID,Name: badgeTitle, Image: badgeImage, ProgressionCurrent:10 , ProgressionMax: 15))
                     
                     // for debugging
                     print (self.BadgeCategories.count)
@@ -99,8 +100,9 @@ class BadgeViewController: UIViewController,UITableViewDelegate, UITableViewData
                 // Set the movieItem field with the movi
                 // object selected by the user.
                 let badgeTypeCategory = BadgeCategories[myIndexPath!.row].badgeCategoryName
-                //let badgeTypeCategoryID = BadgeCategories[myIndexPath!.row].badgecategoryID
+                let badgeCategoryID = BadgeCategories[myIndexPath!.row].badgeCategoryID
                 detailViewController.BadgeCategory = badgeTypeCategory
+                detailViewController.BadgeCategoryID = badgeCategoryID
             }
         }
     }

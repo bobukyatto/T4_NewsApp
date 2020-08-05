@@ -14,6 +14,7 @@ class BadgeType: NSObject {
     var badgeDescription:String
     var badgeImage: String
     var badgeProgressionMax: Int
+    var badgeProgressionCurrent: Int = 0
     
     init(Category:String, Title:String, Description:String, Image:String, ProgressionMax:Int ){
         self.badgeCategoryName = Category
