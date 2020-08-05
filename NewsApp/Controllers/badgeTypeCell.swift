@@ -10,7 +10,9 @@ import UIKit
 
 class badgeTypeCell: UITableViewCell {
     
+    @IBOutlet weak var badgeTypeImageView: UIImageView!
     @IBOutlet weak var badgeTypeTitleLabel: UILabel!
+    @IBOutlet weak var badgeTypeProgressionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -23,8 +23,8 @@ class BadgeViewController: UIViewController,UITableViewDelegate, UITableViewData
         
         // Start additional setup after loading the view.
         
-        //Load badge categories from firestore
-        db.collection("badgeCategory").getDocuments() { (querySnapshot, err) in
+        //Load badge categories from firestore order by category index field
+        db.collection("badgeCategory").order(by: "categoryIndex").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
