@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSoup
 
 class OfficialNewsHelper: NSObject {
     func scrapeArticle(article: OfficialNewsArticle?, currentUIelementWidth: CGFloat, onComplete: ((NSMutableAttributedString?) -> Void)?) {
