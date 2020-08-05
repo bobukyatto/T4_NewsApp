@@ -9,13 +9,12 @@
 import UIKit
 
 class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     
     var tableList: [String: [OfficialNewsArticle]] = [
         "The Straits Times": [],
         "CNA": []
     ]
-    
     var newsList: [String: [OfficialNewsArticle]] = [
         "The Straits Times": [],
         "CNA": []
@@ -59,7 +58,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             return tableList[Array(tableList.keys)[section]]!.count
         }
         
-        return 1
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +94,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func loadNews() {
-        self.loadingAlertPresent(loadingText: "Loading List...")
+        self.presentSpinnerAlert(title: nil, message: "Loading List...")
         
         OfficialNewsDataManager.loadNews(onComplete: {
             results in
@@ -119,9 +118,9 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func searchNews(searchText: String) {
-        let taskGroup = DispatchGroup()
+        self.presentSpinnerAlert(title: nil, message: "Searching...")
         
-        loadingAlertPresent(loadingText: "Searching...")
+        let taskGroup = DispatchGroup()
         
         if searchText != "" {
             for item in self.tableList {
@@ -149,16 +148,5 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
         })
-    }
-    
-    func loadingAlertPresent(loadingText: String) {
-        let loadAlert = UIAlertController(title: nil, message: loadingText, preferredStyle: .alert)
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .medium
-        loadingIndicator.startAnimating();
-
-        loadAlert.view.addSubview(loadingIndicator)
-        self.present(loadAlert, animated: false, completion: nil)
     }
 }

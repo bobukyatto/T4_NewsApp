@@ -46,13 +46,13 @@ class OfficialNewsDataManager: NSObject {
                     newsArticles = []
                     
                     taskGroup.enter()
-                    self.newsSearchApi(params: "q= &domains=straitstimes.com&pageSize=100", onComplete: {
+                    self.newsSearchApi(params: "q= &domains=straitstimes.com&pageSize=50", onComplete: {
                         results in newsArticles.append(contentsOf: results)
                         taskGroup.leave()
                     })
                     
                     taskGroup.enter()
-                    self.newsSearchApi(params: "q= &domains=channelnewsasia.com&pageSize=100", onComplete: {
+                    self.newsSearchApi(params: "q= &domains=channelnewsasia.com&pageSize=50", onComplete: {
                         results in newsArticles.append(contentsOf: results)
                         taskGroup.leave()
                     })

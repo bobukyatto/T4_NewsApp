@@ -28,28 +28,7 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
         super.viewDidLoad()
         synth.delegate = self
         
-        loadingAlertPresent(loadingText: "Loading Article...")
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
-        
-        srcLabel.text = article?.source
-        dateLabel.text = dateFormatter.string(from: article?.publishDate ?? Date())
-        titleLabel.text = article?.title
-        
-        switch article?.source.lowercased() {
-            case "the straits times":
-                srcImgView.image = UIImage(named: "straits-times")
-                break
-            case "cna":
-                srcImgView.image = UIImage(named: "cna")
-                break
-            default:
-                break
-        }
-        
-        articleImgView.loadFromUrl(defaultImgName: "logo", withUrl: article?.urlImg ?? "")
-        scrapeNews()
+        loadArticle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,92 +68,34 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
         ttsBtn.setTitleColor(.systemBlue, for: .normal)
     }
     
-    func scrapeNews() {
-        let url = URL(string: article?.url ?? "")
+    func loadArticle() {
+        self.presentSpinnerAlert(title: nil, message: "Loading Article...")
         
-        URLSession.shared.dataTask(with: url!, completionHandler:  {
-            data, res, err in
-            
-            let htmlStr: String = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
-            var htmlData: Data?;
-            
-            if (htmlStr != "") {
-                let doc: Document = try! SwiftSoup.parse(htmlStr)
-                
-                switch self.article?.source.lowercased() {
-                    case "the straits times":
-                        try! doc.select(".field .field-item figure.image img").attr("width", "\(self.contentTxtViewWidth)")
-                        try! doc.select(".field .field-item figure.image img").attr("height", "")
-                        try! doc.select(".field .field-item h4").attr("style", "color: #36627b; font-size: 17px; font-weight: 900; font-family: Arial;")
-                        try! doc.select(".field .field-item p:contains(Get The Straits Times app)").html("")
-                        try! doc.select(".field .field-item p:contains(Read the latest on)").html("")
-                        try! doc.select(".field .field-item p").attr("style", "font-size: 16px; font-family: Arial;")
-                        
-                        htmlData = NSString(string: try! doc.select(".field .field-item p:contains( ), .field .field-item h4:not(.related-story-headline, .label-above), .field .field-item figure.image img").outerHtml()).data(using: String.Encoding.utf8.rawValue)
-                        break;
-                    case "cna":
-                        try! doc.select(".c-rte--article > p:contains(subscribe to our Telegram channel for the latest updates)").html("")
-                        try! doc.select(".c-rte--article > p").attr("style", "font-size: 16px; font-family: Arial;")
-                        
-                        htmlData = NSString(string: try! doc.select(".c-rte--article > p:contains( )").outerHtml()).data(using: String.Encoding.utf8.rawValue)
-                        break;
-                    default:
-                        break;
-                }
-            }
-            
-            DispatchQueue.main.async {
-                if (htmlData != nil) {
-                    let attrOpt = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
-                    let attrStr = try! NSMutableAttributedString(data: htmlData!, options: attrOpt, documentAttributes: nil)
-
-                    self.contentTxtView.attributedText = attrStr
-                    
-                    self.dismiss(animated: false, completion: nil)
-                }
-            }
-        }).resume()
-    }
-    
-    func loadingAlertPresent(loadingText: String) {
-        let loadAlert = UIAlertController(title: nil, message: loadingText, preferredStyle: .alert)
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .medium
-        loadingIndicator.startAnimating();
-
-        loadAlert.view.addSubview(loadingIndicator)
-        self.present(loadAlert, animated: false, completion: nil)
-    }
-}
-
-let imageCache = NSCache<NSString, AnyObject>()
-
-// load image from url async
-extension UIImageView {
-    func loadFromUrl(defaultImgName: String, withUrl urlString: String) {
-        let url = URL(string: urlString)
-        self.image = nil
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
         
-        if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
-            self.image = cachedImage
-            return
+        srcLabel.text = article?.source
+        dateLabel.text = dateFormatter.string(from: article?.publishDate ?? Date())
+        titleLabel.text = article?.title
+        
+        switch article?.source.lowercased() {
+            case "the straits times":
+                srcImgView.image = UIImage(named: "straits-times")
+                break
+            case "cna":
+                srcImgView.image = UIImage(named: "cna")
+                break
+            default:
+                break
         }
-
-        URLSession.shared.dataTask(with: url!, completionHandler: {
-            data, res, err in
+        
+        articleImgView.loadFromUrl(defaultImgName: "logo", withUrl: article?.urlImg ?? "")
+        
+        OfficialNewsHelper().scrapeArticle(article: article, currentUIelementWidth: contentTxtViewWidth, onComplete: {
+            results in
             
-            if err != nil {
-                self.image = UIImage(named: defaultImgName)
-                return
-            }
-
-            DispatchQueue.main.async {
-                if let image = UIImage(data: data!) {
-                    imageCache.setObject(image, forKey: urlString as NSString)
-                    self.image = image
-                }
-            }
-        }).resume()
+            self.contentTxtView.attributedText = results
+            self.dismiss(animated: false, completion: nil)
+        })
     }
 }

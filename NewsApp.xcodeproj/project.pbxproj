@@ -16,6 +16,8 @@
 		51396AA42487338D00B85927 /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51396AA32487338D00B85927 /* NewsAppTests.swift */; };
 		51396AAF2487338D00B85927 /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51396AAE2487338D00B85927 /* NewsAppUITests.swift */; };
 		7A2199BC4C2A5046ED6BED4C /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E44C622F9A0C091FAF8FF4A /* Pods_NewsApp.framework */; };
+		8E00CC1D24DA9ECC004EE490 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00CC1C24DA9ECC004EE490 /* HelperExtensions.swift */; };
+		8E00CC1F24DAA8EF004EE490 /* OfficialNewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00CC1E24DAA8EF004EE490 /* OfficialNewsHelper.swift */; };
 		8E0B7F9324A9C14C007A4526 /* UserNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9224A9C14C007A4526 /* UserNews.storyboard */; };
 		8E0B7F9824A9C265007A4526 /* Badges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9724A9C265007A4526 /* Badges.storyboard */; };
 		8E0B7F9B24A9C278007A4526 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0B7F9924A9C278007A4526 /* Auth.storyboard */; };
@@ -31,12 +33,15 @@
 		8E1DDECE24AC2E570000933E /* OfficialNewsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DDECD24AC2E570000933E /* OfficialNewsDataManager.swift */; };
 		8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DDECF24AC46E90000933E /* OfficialNewsViewController.swift */; };
 		8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DDED124AC4C440000933E /* OfficialNewsTableViewCell.swift */; };
-		8E7FCE7724D5AD69004A2ACD /* BookmarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FCE7624D5AD69004A2ACD /* BookmarksTableViewController.swift */; };
+		8E72093624DA6CA500B5F2CF /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72093524DA6CA500B5F2CF /* Bookmark.swift */; };
+		8E72093824DA6DCD00B5F2CF /* BookmarkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72093724DA6DCD00B5F2CF /* BookmarkDataManager.swift */; };
+		8E7FCE7724D5AD69004A2ACD /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FCE7624D5AD69004A2ACD /* BookmarksViewController.swift */; };
 		8E840C0624ABE0F500A5C76B /* OfficialNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E840C0524ABE0F500A5C76B /* OfficialNews.storyboard */; };
 		8E97C4DE24BEACD70084978D /* SignUpViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */; };
 		8E99986F24C8D6E100668411 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E99986E24C8D6E100668411 /* Bookmarks.storyboard */; };
 		8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFE47224AE5A9A007C1AF2 /* SwiftyJSON.swift */; };
 		8EBFE47524AE639F007C1AF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */; };
+		8ED1513324D7E50E000FA1DD /* BookmarksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1513224D7E50E000FA1DD /* BookmarksTableViewCell.swift */; };
 		8ED6F5F424D26D85008D1D07 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6F5F324D26D85008D1D07 /* UserDataManager.swift */; };
 		8ED6F5F624D26EE7008D1D07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6F5F524D26EE7008D1D07 /* User.swift */; };
 		8ED6F5F824D30490008D1D07 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6F5F724D30490008D1D07 /* AuthViewController.swift */; };
@@ -96,6 +101,8 @@
 		51396AAE2487338D00B85927 /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		51396AB02487338D00B85927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CBB079E3888DB9B7DFCDFF2 /* Pods-NewsApp-NewsAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp-NewsAppUITests.release.xcconfig"; path = "Target Support Files/Pods-NewsApp-NewsAppUITests/Pods-NewsApp-NewsAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8E00CC1C24DA9ECC004EE490 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		8E00CC1E24DAA8EF004EE490 /* OfficialNewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialNewsHelper.swift; sourceTree = "<group>"; };
 		8E0B7F9224A9C14C007A4526 /* UserNews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserNews.storyboard; sourceTree = "<group>"; };
 		8E0B7F9724A9C265007A4526 /* Badges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Badges.storyboard; sourceTree = "<group>"; };
 		8E0B7F9A24A9C278007A4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NewsApp/Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
@@ -111,12 +118,15 @@
 		8E1DDECD24AC2E570000933E /* OfficialNewsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialNewsDataManager.swift; sourceTree = "<group>"; };
 		8E1DDECF24AC46E90000933E /* OfficialNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialNewsViewController.swift; sourceTree = "<group>"; };
 		8E1DDED124AC4C440000933E /* OfficialNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialNewsTableViewCell.swift; sourceTree = "<group>"; };
-		8E7FCE7624D5AD69004A2ACD /* BookmarksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewController.swift; sourceTree = "<group>"; };
+		8E72093524DA6CA500B5F2CF /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		8E72093724DA6DCD00B5F2CF /* BookmarkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDataManager.swift; sourceTree = "<group>"; };
+		8E7FCE7624D5AD69004A2ACD /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		8E840C0524ABE0F500A5C76B /* OfficialNews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OfficialNews.storyboard; sourceTree = "<group>"; };
 		8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewController.swift; sourceTree = "<group>"; };
 		8E99986E24C8D6E100668411 /* Bookmarks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bookmarks.storyboard; sourceTree = "<group>"; };
 		8EBFE47224AE5A9A007C1AF2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8ED1513224D7E50E000FA1DD /* BookmarksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewCell.swift; sourceTree = "<group>"; };
 		8ED6F5F324D26D85008D1D07 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		8ED6F5F524D26EE7008D1D07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8ED6F5F724D30490008D1D07 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -197,11 +207,11 @@
 				8E1DDEC424AC1EBF0000933E /* Controllers */,
 				8E840BFF24AB981900A5C76B /* Storyboards */,
 				8E1DDEC824AC2DF30000933E /* Utils */,
-				51396A8A2487338C00B85927 /* AppDelegate.swift */,
 				51396A8C2487338C00B85927 /* SceneDelegate.swift */,
 				51396A922487338C00B85927 /* Main.storyboard */,
 				51396A952487338D00B85927 /* Assets.xcassets */,
 				51396A972487338D00B85927 /* LaunchScreen.storyboard */,
+				51396A8A2487338C00B85927 /* AppDelegate.swift */,
 				51396A9A2487338D00B85927 /* Info.plist */,
 				8EBFE47424AE639F007C1AF2 /* GoogleService-Info.plist */,
 				8E1BF26724AF117300071367 /* Gif */,
@@ -247,6 +257,7 @@
 				D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */,
 				D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */,
 				D483C5ED24D1212D00271089 /* badgeTypeCell.swift */,
+				8E1BF26324AF0AC000071367 /* LogoAnimationUIView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				8E188CA024BDEE8E002FA124 /* DBLastModifiedDataManager.swift */,
 				ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */,
 				8ED6F5F324D26D85008D1D07 /* UserDataManager.swift */,
+				8E72093724DA6DCD00B5F2CF /* BookmarkDataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -265,10 +277,11 @@
 		8E1DDEC824AC2DF30000933E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E00CC1C24DA9ECC004EE490 /* HelperExtensions.swift */,
+				8E00CC1E24DAA8EF004EE490 /* OfficialNewsHelper.swift */,
 				8E1DDEC924AC2E120000933E /* HTTP.swift */,
 				8EBFE47224AE5A9A007C1AF2 /* SwiftyJSON.swift */,
 				8E1BF25D24AF007200071367 /* UIView+Constraints.swift */,
-				8E1BF26324AF0AC000071367 /* LogoAnimationUIView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -276,7 +289,8 @@
 		8E7FCE7524D5AD3E004A2ACD /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				8E7FCE7624D5AD69004A2ACD /* BookmarksTableViewController.swift */,
+				8E7FCE7624D5AD69004A2ACD /* BookmarksViewController.swift */,
+				8ED1513224D7E50E000FA1DD /* BookmarksTableViewCell.swift */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 				D54DA17424C3CDEC001B82F6 /* Badge.swift */,
 				D483C5EB24D11C8A00271089 /* BadgeType.swift */,
 				8ED6F5F524D26EE7008D1D07 /* User.swift */,
+				8E72093524DA6CA500B5F2CF /* Bookmark.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -609,15 +624,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */,
+				8ED1513324D7E50E000FA1DD /* BookmarksTableViewCell.swift in Sources */,
 				8E1DDECE24AC2E570000933E /* OfficialNewsDataManager.swift in Sources */,
 				8E1BF26424AF0AC000071367 /* LogoAnimationUIView.swift in Sources */,
 				D483C5EE24D1212D00271089 /* badgeTypeCell.swift in Sources */,
+				8E00CC1F24DAA8EF004EE490 /* OfficialNewsHelper.swift in Sources */,
 				D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */,
 				4DA1319B24BDE9A0001641F6 /* LoginViewController.swift in Sources */,
 				D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */,
 				D408D06924C7FF0800920A68 /* ProfileViewController.swift in Sources */,
 				D408D06524C7ECD800920A68 /* ForgotPassViewController.swift in Sources */,
 				8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */,
+				8E72093624DA6CA500B5F2CF /* Bookmark.swift in Sources */,
 				8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */,
 				ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */,
 				8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */,
@@ -628,12 +646,14 @@
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
 				D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */,
 				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
+				8E00CC1D24DA9ECC004EE490 /* HelperExtensions.swift in Sources */,
 				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E188CA124BDEE8E002FA124 /* DBLastModifiedDataManager.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
 				8ED6F5F424D26D85008D1D07 /* UserDataManager.swift in Sources */,
 				D483C5EC24D11C8A00271089 /* BadgeType.swift in Sources */,
-				8E7FCE7724D5AD69004A2ACD /* BookmarksTableViewController.swift in Sources */,
+				8E7FCE7724D5AD69004A2ACD /* BookmarksViewController.swift in Sources */,
+				8E72093824DA6DCD00B5F2CF /* BookmarkDataManager.swift in Sources */,
 				8ED6F5F624D26EE7008D1D07 /* User.swift in Sources */,
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
 				D483C5EA24D1160700271089 /* BadgeCategoryViewController.swift in Sources */,
