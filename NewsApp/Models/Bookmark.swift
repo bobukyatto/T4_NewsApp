@@ -13,15 +13,15 @@ class Bookmark: Codable {
     @DocumentID var id: String? = UUID().uuidString;
     var uid: String;
     var type: String;
-    var source: String;
+    var source: String?;
     var title: String;
-    var desc: String;
-    var url: String;
+    var desc: String?;
+    var url: String?;
     var urlImg: String;
     var publishDate: Date;
     var content: String?;
     
-    init(id: String?, uid: String, type: String, source: String, title: String, desc: String, url: String, urlImg: String, publishDate: Date, content: String?) {
+    init(id: String?, uid: String, type: String, source: String?, title: String, desc: String?, url: String?, urlImg: String, publishDate: Date, content: String?) {
         self.id = id;
         self.uid = uid;
         self.type = type;

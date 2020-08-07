@@ -30,13 +30,37 @@ class UserNewsDetailViewController: UIViewController {
         self.getBookmark()
     }
     
-    // TODO: Call in bookmarkBtn touch inside
+    /* TODO: Call in bookmarkBtn touch inside.
+    * Suggesst changing date variable in UserNewsArticle model,
+    * from String to Date format.
+    * Can check UserNewsArticle model, and
+    * OfficialNewsViewController DateFormatter(),
+    * around line 68 on how to format Date data
+    * type to String for display.
+    */
     func updateBookmark() {
         if self.bookmark != nil {
             BookmarkDataManager.deleteBookmark(bookmark: self.bookmark!)
             self.bookmark = nil
         }
         else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ";
+            let date = dateFormatter.date(from: usernewsItem?.date ?? "")
+            
+            self.bookmark = Bookmark(
+                id: nil,
+                uid: (UserDataManager.loggedIn?.uid)!,
+                type: "user",
+                source: nil,
+                title: usernewsItem?.title ?? "",
+                desc: nil,
+                url: nil,
+                urlImg: usernewsItem?.imageName ?? "",
+                publishDate: date!,
+                content: usernewsItem?.content
+            )
+            
             BookmarkDataManager.addBookmark(bookmark: self.bookmark!)
         }
         
