@@ -86,7 +86,7 @@ class BooksmarksDetailsViewController: UIViewController, AVSpeechSynthesizerDele
         titleLabel.text = bookmark?.title
         
         if bookmark?.type == "official" {
-            switch bookmark?.source.lowercased() {
+            switch bookmark?.source?.lowercased() {
                 case "the straits times":
                     srcImgView.image = UIImage(named: "straits-times")
                     break

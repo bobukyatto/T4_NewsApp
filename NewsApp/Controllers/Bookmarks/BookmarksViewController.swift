@@ -82,7 +82,7 @@ class BookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.titleLabel!.text = n.title
         
         if n.type == "official" {
-            switch n.source.lowercased() {
+            switch n.source?.lowercased() {
                 case "the straits times":
                     cell.srcImgView.image = UIImage(named: "straits-times")
                     break

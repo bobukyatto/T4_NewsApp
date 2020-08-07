@@ -33,7 +33,7 @@ class UserNewsDetailViewController: UIViewController {
     /* TODO: Call in bookmarkBtn touch inside.
     * Suggesst changing date variable in UserNewsArticle model,
     * from String to Date format.
-    * Can check UserNewsArticle model, and
+    * Can check OfficialNewsArticle model, and
     * OfficialNewsViewController DateFormatter(),
     * around line 68 on how to format Date data
     * type to String for display.

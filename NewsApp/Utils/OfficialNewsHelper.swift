@@ -62,7 +62,7 @@ class OfficialNewsHelper: NSObject {
     
     func scrapeArticle(bookmark: Bookmark?, currentUIelementWidth: CGFloat, onComplete: ((NSMutableAttributedString?) -> Void)?) {
         if bookmark != nil && bookmark?.url != "" && bookmark?.url != nil {
-            let url = URL(string: bookmark!.url)
+            let url = URL(string: bookmark!.url ?? "")
             
             URLSession.shared.dataTask(with: url!, completionHandler: {
                 data, res, err in
@@ -73,7 +73,7 @@ class OfficialNewsHelper: NSObject {
                 if (htmlStr != "") {
                     let doc: Document = try! SwiftSoup.parse(htmlStr)
                     
-                    switch bookmark!.source.lowercased() {
+                    switch bookmark!.source?.lowercased() {
                         case "the straits times":
                             try! doc.select(".field .field-item figure.image img").attr("width", "\(currentUIelementWidth)")
                             try! doc.select(".field .field-item figure.image img").attr("height", "")
