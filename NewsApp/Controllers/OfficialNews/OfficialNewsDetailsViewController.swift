@@ -37,7 +37,7 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         contentTxtViewWidth = contentTxtView.frame.width
-        print("ViewDidAppear")
+        
         self.getBookmark()
     }
     

@@ -55,6 +55,22 @@ class BookmarkDataManager: NSObject {
         }
     }
     
+    static func getBookmark(user: User, article: UserNewsArticle, onComplete: ((Bookmark?) -> Void)?) {
+        bookmarksRef.whereField("uid", isEqualTo: user.uid!).whereField("title", isEqualTo: article.title).getDocuments() {
+            (snapshot, err) in
+            
+            var bookmark: Bookmark?
+            
+            if let err = err {
+                print("BookmarkDataManager: \(err)")
+            }
+            else {
+                bookmark = try? snapshot?.documents.first?.data(as: Bookmark.self)
+            }
+            onComplete?(bookmark)
+        }
+    }
+    
     static func addBookmark(bookmark: Bookmark) {
         try? bookmarksRef.document().setData(from: bookmark) {
             err in
