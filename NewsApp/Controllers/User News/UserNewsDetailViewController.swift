@@ -48,7 +48,7 @@ class UserNewsDetailViewController: UIViewController {
         }
         else {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ";
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let date = dateFormatter.date(from: usernewsItem?.date ?? "")
             
             self.bookmark = Bookmark(
