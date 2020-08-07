@@ -12,15 +12,15 @@ import FirebaseFirestoreSwift
 
 class BookmarkDataManager: NSObject {
     static let db = Firestore.firestore()
-    private static let bookmarksRef = db.collection("officialNews")
+    private static let bookmarksRef = db.collection("bookmarks")
     
     static func getUserBookmarks(user: User, onComplete: (([Bookmark]) -> Void)?) {
         bookmarksRef.getDocuments() {
             (snapshot, err) in
             
-            if (user.uid != nil) {
-                var bookmarksList: [Bookmark] = []
-                
+            var bookmarksList: [Bookmark] = []
+            
+            if user.uid != nil {
                 if let err = err {
                     print("BookmarkDataManager: \(err)")
                 }
@@ -33,9 +33,25 @@ class BookmarkDataManager: NSObject {
                         }
                     }
                 }
-                
-                onComplete?(bookmarksList)
             }
+            
+            onComplete?(bookmarksList)
+        }
+    }
+    
+    static func getBookmark(user: User, article: OfficialNewsArticle, onComplete: ((Bookmark?) -> Void)?) {
+        bookmarksRef.whereField("uid", isEqualTo: user.uid!).whereField("title", isEqualTo: article.title).getDocuments() {
+            (snapshot, err) in
+            
+            var bookmark: Bookmark?
+            
+            if let err = err {
+                print("BookmarkDataManager: \(err)")
+            }
+            else {
+                bookmark = try? snapshot?.documents.first?.data(as: Bookmark.self)
+            }
+            onComplete?(bookmark)
         }
     }
     

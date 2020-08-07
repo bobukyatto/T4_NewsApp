@@ -8,13 +8,14 @@
 
 import UIKit
 
-class BookmarksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BookmarksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet var tableView: UITableView!
     
-    var newsList: [String: [Bookmark]] = [
+    var bookmarkList: [String: [Bookmark]] = [
         "Official News": [],
         "User News": []
     ]
+    
     var tableList: [String: [Bookmark]] = [
         "Official News": [],
         "User News": []
@@ -24,6 +25,44 @@ class BookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadBookmarks()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ShowBookmarkDetails") {
+            let detailVC = segue.destination as! BooksmarksDetailsViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            
+            if (indexPath != nil) {
+                detailVC.bookmark = tableList[Array(tableList.keys)[indexPath!.section]]?[indexPath!.row]
+                detailVC.returnRemovedBookmark = {
+                    result in
+                    
+                    if result != nil {
+                        BookmarkDataManager.deleteBookmark(bookmark: result!)
+                    }
+                }
+            }
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBookmarks(searchText: searchBar.text ?? "")
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            tableList = bookmarkList
+            self.tableView.reloadData()
+        }
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableList.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section < tableList.count {
             return tableList[Array(tableList.keys)[section]]!.count
@@ -31,13 +70,9 @@ class BookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return 0
     }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return tableList.count
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: BookmarksTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! BookmarksTableViewCell
+        let cell: BookmarksTableViewCell = tableView.dequeueReusableCell(withIdentifier: "BookmarksCell", for: indexPath) as! BookmarksTableViewCell
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
         
@@ -71,7 +106,12 @@ class BookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func loadBookmarks() {
-        self.loadingAlertPresent(loadingText: "Loading List...")
+        self.presentSpinnerAlert(message: "Loading List...")
+        
+        for item in self.bookmarkList {
+            self.bookmarkList[item.key] = []
+            self.tableList[item.key] = []
+        }
         
         let user = UserDataManager.loggedIn
         
@@ -81,31 +121,40 @@ class BookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 for bookmark in results {
                     if bookmark.type == "official" {
-                        self.newsList["Official News"]?.append(bookmark)
+                        self.bookmarkList["Official News"]?.append(bookmark)
                     }
                     else {
-                        self.newsList["User News"]?.append(bookmark)
+                        self.bookmarkList["User News"]?.append(bookmark)
                     }
                 }
                 
-                self.tableList = self.newsList
+                self.tableList = self.bookmarkList
+                
+                DispatchQueue.main.async {                    self.tableView.reloadData()
+                    self.dismiss(animated: false, completion: nil)
+                }
             })
-        }
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.dismiss(animated: false, completion: nil)
         }
     }
     
-    func loadingAlertPresent(loadingText: String) {
-        let loadAlert = UIAlertController(title: nil, message: loadingText, preferredStyle: .alert)
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .medium
-        loadingIndicator.startAnimating();
-
-        loadAlert.view.addSubview(loadingIndicator)
-        self.present(loadAlert, animated: false, completion: nil)
+    func searchBookmarks(searchText: String) {
+        self.presentSpinnerAlert(message: "Searching...")
+        
+        if !searchText.isEmpty {
+            for item in self.tableList {
+                self.tableList[item.key] = []
+                
+                self.tableList[item.key] = self.bookmarkList[item.key]?.filter {
+                    $0.title.contains(searchText)
+                }
+                
+                self.tableList[item.key]?.sort(by: {
+                    $0.publishDate > $1.publishDate
+                })
+            }
+        }
+        
+        self.tableView.reloadData()
+        self.dismiss(animated: false, completion: nil)
     }
 }

@@ -31,8 +31,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             let indexPath = self.tableView.indexPathForSelectedRow
             
             if (indexPath != nil) {
-                let article = tableList[Array(tableList.keys)[indexPath!.section]]?[indexPath!.row]
-                detailVC.article = article
+                detailVC.article = tableList[Array(tableList.keys)[indexPath!.section]]?[indexPath!.row]
             }
         }
     }
@@ -42,9 +41,8 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == "" {
+        if searchText.isEmpty {
             tableList = newsList
-            
             self.tableView.reloadData()
         }
     }
@@ -94,7 +92,7 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func loadNews() {
-        self.presentSpinnerAlert(title: nil, message: "Loading List...")
+        self.presentSpinnerAlert(message: "Loading List...")
         
         OfficialNewsDataManager.loadNews(onComplete: {
             results in
@@ -118,11 +116,11 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func searchNews(searchText: String) {
-        self.presentSpinnerAlert(title: nil, message: "Searching...")
+        self.presentSpinnerAlert(message: "Searching...")
         
         let taskGroup = DispatchGroup()
         
-        if searchText != "" {
+        if !searchText.isEmpty {
             for item in self.tableList {
                 self.tableList[item.key] = []
             }

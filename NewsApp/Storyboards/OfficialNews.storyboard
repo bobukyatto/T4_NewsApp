@@ -163,6 +163,13 @@
                                     <action selector="ttsBtn_Touch_Inside:" destination="9gN-iQ-8ZQ" eventType="touchUpInside" id="KsT-o7-Z59"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3b-AV-fOM">
+                                <rect key="frame" x="324" y="314" width="70" height="30"/>
+                                <state key="normal" title="Bookmark"/>
+                                <connections>
+                                    <action selector="bookmarkBtn_Touch_Inside:" destination="9gN-iQ-8ZQ" eventType="touchUpInside" id="xNR-Pz-ixM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -183,8 +190,11 @@
                             <constraint firstItem="cbb-9u-K8i" firstAttribute="top" secondItem="cFT-5Y-m37" secondAttribute="bottom" constant="8" id="fVB-lI-lCi"/>
                             <constraint firstItem="nAV-vm-984" firstAttribute="bottom" secondItem="RM6-tO-nhw" secondAttribute="bottom" id="p9k-iv-L1X"/>
                             <constraint firstItem="Pi6-eM-Gqd" firstAttribute="leading" secondItem="RM6-tO-nhw" secondAttribute="leading" constant="20" id="qyt-GV-hC5"/>
+                            <constraint firstItem="RM6-tO-nhw" firstAttribute="trailing" secondItem="D3b-AV-fOM" secondAttribute="trailing" constant="20" id="sbh-Lo-7Rv"/>
                             <constraint firstItem="RM6-tO-nhw" firstAttribute="trailing" secondItem="Pi6-eM-Gqd" secondAttribute="trailing" constant="20" id="ugX-GP-qFN"/>
+                            <constraint firstItem="D3b-AV-fOM" firstAttribute="top" secondItem="Pi6-eM-Gqd" secondAttribute="bottom" constant="8" id="usg-IQ-aU2"/>
                             <constraint firstItem="Vs9-ZC-dbs" firstAttribute="top" secondItem="Pi6-eM-Gqd" secondAttribute="bottom" constant="8" id="w8k-9n-pKR"/>
+                            <constraint firstItem="nAV-vm-984" firstAttribute="top" secondItem="D3b-AV-fOM" secondAttribute="bottom" constant="8" id="xmc-LV-iXv"/>
                             <constraint firstItem="nAV-vm-984" firstAttribute="top" secondItem="Vs9-ZC-dbs" secondAttribute="bottom" constant="8" id="zP6-KI-Iau"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RM6-tO-nhw"/>
@@ -192,6 +202,7 @@
                     <navigationItem key="navigationItem" title="News Article" id="kE5-Kg-KrT"/>
                     <connections>
                         <outlet property="articleImgView" destination="Pi6-eM-Gqd" id="7Nc-0B-jgc"/>
+                        <outlet property="bookmarkBtn" destination="D3b-AV-fOM" id="uyR-Fb-PaK"/>
                         <outlet property="contentTxtView" destination="nAV-vm-984" id="S08-DX-p6e"/>
                         <outlet property="dateLabel" destination="3u6-uF-n4H" id="GsM-TA-Qxs"/>
                         <outlet property="srcImgView" destination="cFT-5Y-m37" id="HHK-er-CUX"/>

@@ -1,44 +1,41 @@
 //
-//  OfficialNewsDetailsViewController.swift
+//  BooksmarksDetailsViewController.swift
 //  NewsApp
 //
-//  Created by Joel on 15/7/20.
+//  Created by Joel on 5/8/20.
 //  Copyright © 2020 M02-4. All rights reserved.
 //
 
 import UIKit
-import SwiftSoup
 import AVFoundation
 
-// TODO: Scrape article text content
-class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDelegate {
+class BooksmarksDetailsViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBOutlet var srcImgView: UIImageView!
     @IBOutlet var srcLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var articleImgView: UIImageView!
     @IBOutlet var ttsBtn: UIButton!
-    @IBOutlet var contentTxtView: UITextView!
     @IBOutlet var bookmarkBtn: UIButton!
+    @IBOutlet var contentTxtView: UITextView!
     
-    var userStateChanged: Bool = false
+    var returnRemovedBookmark: ((Bookmark?) -> ())?
+    var removedBookmark: Bookmark?
+    
     var bookmark: Bookmark?
-    var article: OfficialNewsArticle?
     var contentTxtViewWidth: CGFloat = 0
     let synth = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         synth.delegate = self
-        
         self.loadArticle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         contentTxtViewWidth = contentTxtView.frame.width
-        print("ViewDidAppear")
-        self.getBookmark()
+        self.updateBookmarkBtnState()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +47,7 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
         ttsBtn.setTitleColor(.systemBlue, for: .normal)
     }
     
-    @IBAction func ttsBtn_Touch_Inside(_ sender: Any) {
+    @IBAction func ttsBtn_touch_inside(_ sender: Any) {
         if !synth.isSpeaking {
             let utterance = AVSpeechUtterance(attributedString: contentTxtView.attributedText)
             utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
@@ -74,7 +71,7 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
         }
     }
     
-    @IBAction func bookmarkBtn_Touch_Inside(_ sender: Any) {
+    @IBAction func bookmarkBtn_touch_inside(_ sender: Any) {
         self.updateBookmark()
     }
     
@@ -84,65 +81,42 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
         
-        srcLabel.text = article?.source
-        dateLabel.text = dateFormatter.string(from: article?.publishDate ?? Date())
-        titleLabel.text = article?.title
+        srcLabel.text = bookmark?.source
+        dateLabel.text = dateFormatter.string(from: bookmark?.publishDate ?? Date())
+        titleLabel.text = bookmark?.title
         
-        switch article?.source.lowercased() {
-            case "the straits times":
-                srcImgView.image = UIImage(named: "straits-times")
-                break
-            case "cna":
-                srcImgView.image = UIImage(named: "cna")
-                break
-            default:
-                break
-        }
-        
-        articleImgView.loadFromUrl(defaultImgName: "logo", withUrl: article?.urlImg ?? "")
-        
-        OfficialNewsHelper().scrapeArticle(article: article, currentUIelementWidth: contentTxtViewWidth, onComplete: {
-            results in
+        if bookmark?.type == "official" {
+            switch bookmark?.source.lowercased() {
+                case "the straits times":
+                    srcImgView.image = UIImage(named: "straits-times")
+                    break
+                case "cna":
+                    srcImgView.image = UIImage(named: "cna")
+                    break
+                default:
+                    break
+            }
             
-            self.contentTxtView.attributedText = results
-            self.dismiss(animated: false, completion: nil)
-        })
-    }
-    
-    func getBookmark() {
-        if UserDataManager.loggedIn != nil && article != nil {
-            BookmarkDataManager.getBookmark(user: UserDataManager.loggedIn!, article: article!, onComplete: {
-                result in
+            articleImgView.loadFromUrl(defaultImgName: "logo", withUrl: bookmark?.urlImg ?? "")
+            
+            OfficialNewsHelper().scrapeArticle(bookmark: bookmark, currentUIelementWidth: contentTxtViewWidth, onComplete: {
+                results in
                 
-                self.bookmark = result
-                self.updateBookmarkBtnState()
+                self.contentTxtView.attributedText = results
+                self.dismiss(animated: false, completion: nil)
             })
-        }
-        else {
-            self.updateBookmarkBtnState()
         }
     }
     
     func updateBookmark() {
         if self.bookmark != nil {
             BookmarkDataManager.deleteBookmark(bookmark: self.bookmark!)
+            self.removedBookmark = self.bookmark
             self.bookmark = nil
         }
         else {
-            self.bookmark = Bookmark(
-                id: nil,
-                uid: (UserDataManager.loggedIn?.uid)!,
-                type: "official",
-                source: article!.source,
-                title: article!.title,
-                desc: article!.desc,
-                url: article!.url,
-                urlImg: article!.urlImg,
-                publishDate: article!.publishDate,
-                content: nil
-            )
-            
             BookmarkDataManager.addBookmark(bookmark: self.bookmark!)
+            self.removedBookmark = nil
         }
         
         self.updateBookmarkBtnState()
@@ -160,5 +134,9 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
             self.bookmarkBtn.setTitleColor(.systemGray, for: .disabled)
             self.bookmarkBtn.isEnabled = false
         }
+    }
+    
+    func removeBookmarkCallback() {
+        returnRemovedBookmark?(self.removedBookmark)
     }
 }
