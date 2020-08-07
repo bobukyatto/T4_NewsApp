@@ -21,14 +21,14 @@ class MainUITabBarController: UITabBarController, UITabBarControllerDelegate {
         
         self.tabItems = self.tabBar.items
         self.vcs = [
-            storyboard!.instantiateViewController(withIdentifier: "BookmarksNavigation"),
-            storyboard!.instantiateViewController(withIdentifier: "BadgesNavigation")
+            self.storyboard!.instantiateViewController(withIdentifier: "BookmarksNavigation"),
+            self.storyboard!.instantiateViewController(withIdentifier: "BadgesNavigation")
         ]
         
         vcs?[0].tabBarItem = tabItems?[3]
         vcs?[1].tabBarItem = tabItems?[4]
         
-        view.addSubview(logoAnimationUIView)
+        self.view.addSubview(logoAnimationUIView)
         logoAnimationUIView.pinEdgesToSuperView()
         logoAnimationUIView.logoGifImageView.delegate = self
     }

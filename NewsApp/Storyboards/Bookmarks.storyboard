@@ -44,6 +44,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-Ih-lak">
                                                     <rect key="frame" x="20" y="11" width="88" height="88.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" secondItem="i4c-Ih-lak" secondAttribute="height" multiplier="1:1" id="0J4-F7-6aM"/>
+                                                        <constraint firstAttribute="height" constant="88" id="BC9-gd-fU6"/>
                                                         <constraint firstAttribute="width" secondItem="i4c-Ih-lak" secondAttribute="height" multiplier="1:1" id="p4z-pv-Q8q"/>
                                                         <constraint firstAttribute="width" constant="88" id="whZ-1s-FoP"/>
                                                     </constraints>
@@ -58,8 +60,11 @@
                                                 <constraint firstItem="7d2-q1-Fay" firstAttribute="trailing" secondItem="KsP-JX-9oM" secondAttribute="trailingMargin" id="DLk-Hd-mk1"/>
                                                 <constraint firstItem="IeM-7x-L49" firstAttribute="leading" secondItem="i4c-Ih-lak" secondAttribute="trailing" constant="8" id="Eva-h4-Jvp"/>
                                                 <constraint firstAttribute="trailing" secondItem="IeM-7x-L49" secondAttribute="trailing" constant="20" id="FEp-Hm-Erz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="i4c-Ih-lak" secondAttribute="bottom" id="OV0-wn-F4l"/>
+                                                <constraint firstItem="i4c-Ih-lak" firstAttribute="leading" secondItem="KsP-JX-9oM" secondAttribute="leadingMargin" id="Sbv-h4-T0v"/>
                                                 <constraint firstAttribute="bottom" secondItem="i4c-Ih-lak" secondAttribute="bottom" constant="11" id="Vs6-dN-eaY"/>
                                                 <constraint firstAttribute="bottom" secondItem="IeM-7x-L49" secondAttribute="bottom" constant="11" id="WvY-zQ-Ids"/>
+                                                <constraint firstItem="i4c-Ih-lak" firstAttribute="top" secondItem="KsP-JX-9oM" secondAttribute="topMargin" id="aqG-kQ-FOT"/>
                                                 <constraint firstItem="i4c-Ih-lak" firstAttribute="leading" secondItem="KsP-JX-9oM" secondAttribute="leading" constant="20" id="dhu-da-JYU"/>
                                                 <constraint firstItem="7d2-q1-Fay" firstAttribute="leading" secondItem="i4c-Ih-lak" secondAttribute="trailing" constant="8" id="foU-Pf-YhW"/>
                                                 <constraint firstItem="IeM-7x-L49" firstAttribute="top" secondItem="7d2-q1-Fay" secondAttribute="bottom" constant="8" id="tRB-WX-sD5"/>
