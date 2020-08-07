@@ -36,7 +36,10 @@ class UserNewsDetailViewController: UIViewController {
     * Can check OfficialNewsArticle model, and
     * OfficialNewsViewController DateFormatter(),
     * around line 68 on how to format Date data
-    * type to String for display.
+    * type to String for display. If UserNewsArticle date
+    * variable is changed to Date data type, dateFormatter
+    * below can be removed and just use usernewsItem.date
+    * for the Bookmark() parameter.
     */
     func updateBookmark() {
         if self.bookmark != nil {
