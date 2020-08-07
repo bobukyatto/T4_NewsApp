@@ -11,32 +11,26 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class DBLastModifiedDataManager: NSObject {
-    let db = Firestore.firestore()
+    static let db = Firestore.firestore()
     
-    func getLastModified(onComplete: (([DBLastModified]) -> Void)?) {
-        db.collection("lastModified").getDocuments() {
+    static func getLastModified(tableName: String, onComplete: ((DBLastModified?) -> Void)?) {
+        db.collection("lastModified").whereField("table", isEqualTo: tableName).getDocuments() {
             (snapshot, err) in
             
-            var dbLastModifiedList: [DBLastModified] = []
+            var lastModified: DBLastModified?
             
             if let err = err {
                 print("DBLastModifiedDataManager: \(err)")
             }
             else {
-                for document in snapshot!.documents {
-                    let item = try? document.data(as: DBLastModified.self)!
-                    
-                    if item != nil {
-                        dbLastModifiedList.append(item!)
-                    }
-                }
+                lastModified = try? snapshot?.documents.first?.data(as: DBLastModified.self)
             }
             
-            onComplete?(dbLastModifiedList)
+            onComplete?(lastModified)
         }
     }
     
-    func insertReplaceLastModified(_ dbLastModified: DBLastModified) {
+    static func insertReplaceLastModified(_ dbLastModified: DBLastModified) {
         try? db.collection("lastModified").document(dbLastModified.table).setData(from: dbLastModified, encoder: Firestore.Encoder()) {
             err in
             
@@ -49,7 +43,7 @@ class DBLastModifiedDataManager: NSObject {
         }
     }
     
-    func deleteLastModified(_ dbLastModified: DBLastModified) {
+    static func deleteLastModified(_ dbLastModified: DBLastModified) {
         db.collection("lastModified").document(dbLastModified.table).delete()
     }
 }

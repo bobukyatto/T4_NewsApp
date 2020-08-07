@@ -13,64 +13,69 @@ import FirebaseFirestoreSwift
 class OfficialNewsDataManager: NSObject {
     static let db = Firestore.firestore()
     private static let newsRef = db.collection("officialNews")
+    private static var newsArticles: [OfficialNewsArticle] = []
     
     // Store or retrive from DB with 60 mins interval check to prevent hitting API call limit
     static func loadNews(onComplete: (([OfficialNewsArticle]) -> Void)?) {
         let taskGroup = DispatchGroup()
-        let dbLastModifiedDM = DBLastModifiedDataManager()
         
         var updateFlag = false
-        var dbLastModified: [DBLastModified] = []
+        var lastModified: Date?
         var delArticles: [OfficialNewsArticle] = []
-        var newsArticles: [OfficialNewsArticle] = []
         
         taskGroup.enter()
-        dbLastModifiedDM.getLastModified(onComplete: {
-            results in dbLastModified.append(contentsOf: results)
+        DBLastModifiedDataManager.getLastModified(tableName: "officialNews", onComplete: {
+            results in lastModified = results?.lastModified
             
-            taskGroup.enter()
-            self.getOfficialNews(onComplete: {
-                results in newsArticles.append(contentsOf: results)
+            if lastModified != nil {
+                let lastModifiedMins = Calendar.current.dateComponents([.minute], from: lastModified!, to: Date()).minute ?? 0
                 
-                if let idx: Int = dbLastModified.firstIndex(where: { $0.table == "officialNews" }) {
-                    let lastModified: Int = Calendar.current.dateComponents([.minute], from: dbLastModified[idx].lastModified, to: Date()).minute ?? 0
+                updateFlag = lastModifiedMins > 60 ? true: false
+            }
+            else {
+                updateFlag = true
+            }
+            
+            // check before newsArticles assignment
+            if updateFlag || self.newsArticles.count < 1 {
+                taskGroup.enter()
+                self.getOfficialNews(onComplete: {
+                    results in
                     
-                    updateFlag = lastModified > 60 || newsArticles.count < 1 ? true : false
-                }
-                else {
-                    updateFlag = true
-                }
-                
-                if updateFlag {
-                    delArticles = newsArticles
-                    newsArticles = []
+                    self.newsArticles = results
+                    delArticles = results
                     
-                    taskGroup.enter()
-                    self.newsSearchApi(params: "q= &domains=straitstimes.com&pageSize=50", onComplete: {
-                        results in newsArticles.append(contentsOf: results)
-                        taskGroup.leave()
-                    })
+                    // check after newsArticles assignment
+                    if updateFlag || self.newsArticles.count < 1 {
+                        updateFlag = true
+                        self.newsArticles = []
+                        
+                        taskGroup.enter()
+                        self.newsSearchApi(params: "q= &domains=straitstimes.com&pageSize=50", onComplete: {
+                            results in self.newsArticles.append(contentsOf: results)
+                            taskGroup.leave()
+                        })
+                        
+                        taskGroup.enter()
+                        self.newsSearchApi(params: "q= &domains=channelnewsasia.com&pageSize=50", onComplete: {
+                            results in newsArticles.append(contentsOf: results)
+                            taskGroup.leave()
+                        })
+                    }
                     
-                    taskGroup.enter()
-                    self.newsSearchApi(params: "q= &domains=channelnewsasia.com&pageSize=50", onComplete: {
-                        results in newsArticles.append(contentsOf: results)
-                        taskGroup.leave()
-                    })
-                }
-                
-                taskGroup.leave()
-            })
+                    taskGroup.leave()
+                })
+            }
             
             taskGroup.leave()
         })
         
         taskGroup.notify(queue: .main, execute: {
             if updateFlag {
-                newsArticles.sort(by: { $0.publishDate > $1.publishDate })
                 self.deleteMultiOfficialNews(delArticles)
                 self.insertMultiOfficialNews(newsArticles)
                 
-                dbLastModifiedDM.insertReplaceLastModified(DBLastModified(table: "officialNews", lastModified: Date()))
+                DBLastModifiedDataManager.insertReplaceLastModified(DBLastModified(table: "officialNews", lastModified: Date()))
             }
             
             onComplete?(newsArticles)
@@ -98,7 +103,6 @@ class OfficialNewsDataManager: NSObject {
                 
                 newsArticles.append(
                     OfficialNewsArticle(
-                        id: nil,
                         source: a["source"]["name"].string ?? "",
                         title: a["title"].string ?? "",
                         desc: a["description"].string ?? "",

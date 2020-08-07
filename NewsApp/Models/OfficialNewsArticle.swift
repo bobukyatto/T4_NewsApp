@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestoreSwift
 
 class OfficialNewsArticle: Codable {
-    @DocumentID var id: String? = UUID().uuidString
+    @DocumentID var id: String?;
     var source: String;
     var title: String;
     var desc: String;
@@ -18,7 +18,8 @@ class OfficialNewsArticle: Codable {
     var urlImg: String;
     var publishDate: Date;
     
-    init(id: String?, source: String, title: String, desc: String, url: String, urlImg: String, publishDate: Date) {
+    
+    init(id: String? = UUID().uuidString, source: String, title: String, desc: String, url: String, urlImg: String, publishDate: Date) {
         self.id = id;
         self.source = source;
         self.title = title;
