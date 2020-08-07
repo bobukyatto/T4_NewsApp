@@ -17,6 +17,8 @@ class MainUITabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         self.tabItems = self.tabBar.items
         self.vcs = [
             storyboard!.instantiateViewController(withIdentifier: "BookmarksNavigation"),
