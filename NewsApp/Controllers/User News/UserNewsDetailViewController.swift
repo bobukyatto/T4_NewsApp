@@ -23,6 +23,11 @@ class UserNewsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = usernewsItem?.title
+        dateLabel.text = usernewsItem?.date
+        contentLabel.text = usernewsItem?.content
+        usernewsImage.image = UIImage(named: "logo")
     }
     
     override func viewDidAppear(_ animated: Bool) {

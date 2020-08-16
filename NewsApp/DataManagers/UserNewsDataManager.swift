@@ -45,7 +45,7 @@ class UserNewsDataManager {
     
     static func addUserNews(_ article: UserNewsArticle, _ postId: Int){
        
-        db.collection("userNews").document("UN"+String(postId)).setData(
+        db.collection("userNews").document().setData(
             [
                 "username": article.username,
                 "title": article.title,

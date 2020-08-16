@@ -10,9 +10,24 @@ import UIKit
 
 class UserNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var newsList: [UserNewsArticle] = []
-    
     @IBOutlet weak var newsTableView: UITableView!
+    var newsList: [UserNewsArticle] = []
+
+    override func prepare(for segue : UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "ShowUserNewsDetails"
+        {
+            let destViewController = segue.destination as! UserNewsDetailViewController
+            let myIndexPath = self.newsTableView.indexPathForSelectedRow
+            if myIndexPath != nil
+            {
+                let userNews = newsList[myIndexPath!.row]
+                destViewController.usernewsItem = userNews
+            }
+        }
+    }
+    
+    
+    
     func loadNews(){
         UserNewsDataManager.loadUserNews(){
             newsListFromFireStore in
