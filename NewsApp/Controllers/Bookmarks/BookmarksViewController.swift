@@ -11,15 +11,9 @@ import UIKit
 class BookmarksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet var tableView: UITableView!
     
-    var bookmarkList: [String: [Bookmark]] = [
-        "Official News": [],
-        "User News": []
-    ]
+    var bookmarkList: [String: [Bookmark]] = [:]
     
-    var tableList: [String: [Bookmark]] = [
-        "Official News": [],
-        "User News": []
-    ]
+    var tableList: [String: [Bookmark]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,16 +115,25 @@ class BookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 for bookmark in results {
                     if bookmark.type == "official" {
+                        if (self.bookmarkList["Official News"] == nil) {
+                            self.bookmarkList["Official News"] = [];
+                        }
+                        
                         self.bookmarkList["Official News"]?.append(bookmark)
                     }
                     else {
+                        if (self.bookmarkList["User News"] == nil) {
+                            self.bookmarkList["User News"] = []
+                        }
+                        
                         self.bookmarkList["User News"]?.append(bookmark)
                     }
                 }
                 
                 self.tableList = self.bookmarkList
                 
-                DispatchQueue.main.async {                    self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                     self.dismiss(animated: false, completion: nil)
                 }
             })

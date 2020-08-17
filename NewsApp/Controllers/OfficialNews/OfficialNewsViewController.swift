@@ -103,10 +103,22 @@ class OfficialNewsViewController: UIViewController, UITableViewDelegate, UITable
             
             for item in results {
                 if item.source.lowercased() == "cna" {
+                    let key = item.source.uppercased()
+                    
+                    if (self.newsList[key] == nil) {
+                        self.newsList[key] = []
+                    }
+                    
                     self.newsList["CNA"]?.append(item)
                 }
                 else if item.source.lowercased() == "the straits times" {
-                    self.newsList["The Straits Times"]?.append(item)
+                    let key = item.source.capitalized
+                    
+                    if (self.newsList[key] == nil) {
+                        self.newsList[key] = []
+                    }
+                    
+                    self.newsList[key]?.append(item)
                 }
             }
             

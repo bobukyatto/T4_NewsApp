@@ -111,7 +111,7 @@ class OfficialNewsDetailsViewController: UIViewController, AVSpeechSynthesizerDe
     
     func getBookmark() {
         if UserDataManager.loggedIn != nil && article != nil {
-            BookmarkDataManager.getBookmark(user: UserDataManager.loggedIn!, article: article!, onComplete: {
+            BookmarkDataManager.getOfficialNewsBookmark(user: UserDataManager.loggedIn!, article: article!, onComplete: {
                 result in
                 
                 self.bookmark = result

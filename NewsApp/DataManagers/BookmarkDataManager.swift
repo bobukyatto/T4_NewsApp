@@ -39,7 +39,7 @@ class BookmarkDataManager: NSObject {
         }
     }
     
-    static func getBookmark(user: User, article: OfficialNewsArticle, onComplete: ((Bookmark?) -> Void)?) {
+    static func getOfficialNewsBookmark(user: User, article: OfficialNewsArticle, onComplete: ((Bookmark?) -> Void)?) {
         bookmarksRef.whereField("uid", isEqualTo: user.uid!).whereField("title", isEqualTo: article.title).whereField("type", isEqualTo: "official").getDocuments() {
             (snapshot, err) in
             
@@ -55,7 +55,7 @@ class BookmarkDataManager: NSObject {
         }
     }
     
-    static func getBookmark(user: User, article: UserNewsArticle, onComplete: ((Bookmark?) -> Void)?) {
+    static func getUserNewsBookmark(user: User, article: UserNewsArticle, onComplete: ((Bookmark?) -> Void)?) {
         bookmarksRef.whereField("uid", isEqualTo: user.uid!).whereField("title", isEqualTo: article.title).whereField("type", isEqualTo: "user").getDocuments() {
             (snapshot, err) in
             
