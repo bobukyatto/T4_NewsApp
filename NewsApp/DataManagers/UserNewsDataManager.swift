@@ -40,19 +40,22 @@ class UserNewsDataManager {
             newsListFromFireStore in
             newsList2 = newsListFromFireStore
         }
+ 
         return newsList2.count
     }
     
-    static func addUserNews(_ article: UserNewsArticle, _ postId: Int){
+    static func addUserNews(_ article: UserNewsArticle){
        
+        
         db.collection("userNews").document().setData(
             [
                 "username": article.username,
                 "title": article.title,
                 "content": article.content,
                 "date": article.date,
-                "imageName": article.imageName,
+                "imageName": "logo",
                 "lastUpdated": article.lastUpdated
+                
             ]
         )
         { err in
@@ -76,7 +79,7 @@ class UserNewsDataManager {
         )
     }
     
-    static func deleteUserNews(_ newsId: String){
+    static func deleteUserNews(_ newsId: UserNewsArticle){
         db.collection("userNews").document("placeholder").delete()
         { err in
             if let err = err {

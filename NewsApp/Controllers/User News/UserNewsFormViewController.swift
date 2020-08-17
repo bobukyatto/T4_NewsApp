@@ -18,11 +18,11 @@ class UserNewsFormViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var submitButton: UIButton!
     
     var imgPicker = UIImagePickerController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.originalImage] as? UIImage
         
@@ -44,7 +44,7 @@ class UserNewsFormViewController: UIViewController, UIImagePickerControllerDeleg
         let article: UserNewsArticle = UserNewsArticle("test", title, content, formattedDate, imageName, lastUpdated: formattedDate);
         
         //add article to collection userNews in FireStore
-        UserNewsDataManager.addUserNews(article, UserNewsDataManager.getNoOfNews())
+        UserNewsDataManager.addUserNews(article)
     }
     
     @IBAction func selectImgBtn_touch_inside(_ sender: Any) {

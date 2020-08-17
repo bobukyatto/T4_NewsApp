@@ -54,7 +54,7 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.UNameLabel?.text = "\(p.title)"
         cell.UDateLabel?.text = "\(p.date)"
         cell.UsernameLabel?.text = "test"
-        cell.UNewsImage?.image = nil
+        cell.UNewsImage?.image = UIImage(named: p.imageName)
         
         return cell
     }
@@ -62,7 +62,11 @@ class UserNewsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         if editingStyle == .delete
         {
+            let usernews = newsList[indexPath.row]
             newsList.remove(at: indexPath.row)
+            
+            UserNewsDataManager.deleteUserNews(usernews)
+            
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

@@ -209,7 +209,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R8-2B-DQQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R8-2B-DQQ">
                                 <rect key="frame" x="0.0" y="40" width="375" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -235,6 +235,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="8R8-2B-DQQ" firstAttribute="top" secondItem="CYp-dj-Uf0" secondAttribute="top" constant="40" id="V2M-jr-ySP"/>
                             <constraint firstItem="CYp-dj-Uf0" firstAttribute="trailing" secondItem="8R8-2B-DQQ" secondAttribute="trailing" id="ZP1-Ol-2mb"/>
                             <constraint firstItem="8R8-2B-DQQ" firstAttribute="leading" secondItem="CYp-dj-Uf0" secondAttribute="leading" id="ed4-vP-Bf4"/>
                         </constraints>
