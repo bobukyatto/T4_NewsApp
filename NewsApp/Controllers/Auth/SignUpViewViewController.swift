@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import GoogleSignIn
 
 class SignUpViewController: UIViewController {
     
@@ -21,12 +23,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var cfmpass: UITextField!
     
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var googlesignIn: GIDSignInButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpElements()
         // Do any additional setup after loading the view.
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
     func setUpElements() {

@@ -10,6 +10,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseAuth
+import GoogleSignIn
 
 protocol UserManagerDelegate: class {
     func loggedInDidChange(newVal: User?)
@@ -41,6 +42,7 @@ class UserDataManager {
             print("UserDataManager: \(err)")
         }
     }
+
     
     static func signIn(_ user: User, onComplete: ((User?) -> Void)?) {
         let taskGroup = DispatchGroup()
