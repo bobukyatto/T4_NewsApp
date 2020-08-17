@@ -10,6 +10,7 @@ target 'NewsApp' do
   pod 'FirebaseFirestoreSwift'
   pod 'SwiftyGif'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'SwiftSoup'
 
   target 'NewsAppTests' do

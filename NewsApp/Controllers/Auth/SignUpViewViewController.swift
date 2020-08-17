@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import GoogleSignIn
 
 class SignUpViewController: UIViewController {
     
@@ -21,25 +23,56 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var cfmpass: UITextField!
     
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var googlesignIn: GIDSignInButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpElements()
         // Do any additional setup after loading the view.
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
     func setUpElements() {
         errorLabel.alpha = 0
     }
     
+    // is email valid?
+    func isEmailValid(_ string: String) -> Bool {
+        if string.count > 100 {
+            return false
+        }
+        let emailFormat = "(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}" + "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\" + "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-" + "z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5" + "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-" + "9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21" + "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: string)
+    }
+
+    // is password valid?
+    func isPasswordValid(_ password: String) -> Bool{
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@",
+            "^(?=.*[a-z])(?=.[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        
+        return passwordTest.evaluate(with:password)
+    }
+    
+    
+
+    // Validation
     func validateFields() -> String? {
         // Check that all fields are filled in
         if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             username.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-        
             return "Please fill in all fields"
+        }
+        
+        // Check that email is valid
+        let finalEmail = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if isEmailValid(finalEmail) == false {
+            return "Please enter a valid email"
         }
         
         // Check that passwords match
@@ -47,6 +80,12 @@ class SignUpViewController: UIViewController {
             return "Passwords do not match"
         }
         
+        // Check that the password is secure
+        let finalPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if isPasswordValid(finalPassword) == false {
+            return "Please make sure your password is at least 8 characters, contains a special character and a number."
+        }
+
         return nil
     }
     
@@ -83,15 +122,5 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
     
-    func showAlert() {
-        let alert = UIAlertController(
-            title: "Welcome to NewsReveal!",
-            message: "You have been successfully registered, please login.",
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        
-        self.present(alert, animated: true)
-    }
+    
 }

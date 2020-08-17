@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
@@ -16,11 +17,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var googlesignIn: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpElements()
         // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        
     }
     
     func setUpElements() {
