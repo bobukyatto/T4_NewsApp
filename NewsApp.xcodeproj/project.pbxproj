@@ -38,6 +38,9 @@
 		8E72093824DA6DCD00B5F2CF /* BookmarkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72093724DA6DCD00B5F2CF /* BookmarkDataManager.swift */; };
 		8E7FCE7724D5AD69004A2ACD /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FCE7624D5AD69004A2ACD /* BookmarksViewController.swift */; };
 		8E840C0624ABE0F500A5C76B /* OfficialNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E840C0524ABE0F500A5C76B /* OfficialNews.storyboard */; };
+		8E9744D424EBD7E9002C44A6 /* BadgeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9744D324EBD7E9002C44A6 /* BadgeDataManager.swift */; };
+		8E9744D724EBE22D002C44A6 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9744D624EBE22D002C44A6 /* BadgeTableViewCell.swift */; };
+		8E9744D924EBE4CC002C44A6 /* BadgeUserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9744D824EBE4CC002C44A6 /* BadgeUserDataManager.swift */; };
 		8E97C4DE24BEACD70084978D /* SignUpViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */; };
 		8E99986F24C8D6E100668411 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E99986E24C8D6E100668411 /* Bookmarks.storyboard */; };
 		8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFE47224AE5A9A007C1AF2 /* SwiftyJSON.swift */; };
@@ -55,13 +58,10 @@
 		D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */; };
 		D41AB10D24A9CF5700BFC8F9 /* UserNewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */; };
 		D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */; };
-		D483C5EA24D1160700271089 /* BadgeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */; };
-		D483C5EC24D11C8A00271089 /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5EB24D11C8A00271089 /* BadgeType.swift */; };
-		D483C5EE24D1212D00271089 /* badgeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5ED24D1212D00271089 /* badgeTypeCell.swift */; };
+		D483C5EC24D11C8A00271089 /* BadgeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D483C5EB24D11C8A00271089 /* BadgeUser.swift */; };
 		D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */; };
 		D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17424C3CDEC001B82F6 /* Badge.swift */; };
 		D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */; };
-		D54DA17924C492A6001B82F6 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +124,9 @@
 		8E72093724DA6DCD00B5F2CF /* BookmarkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDataManager.swift; sourceTree = "<group>"; };
 		8E7FCE7624D5AD69004A2ACD /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		8E840C0524ABE0F500A5C76B /* OfficialNews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OfficialNews.storyboard; sourceTree = "<group>"; };
+		8E9744D324EBD7E9002C44A6 /* BadgeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDataManager.swift; sourceTree = "<group>"; };
+		8E9744D624EBE22D002C44A6 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
+		8E9744D824EBE4CC002C44A6 /* BadgeUserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeUserDataManager.swift; sourceTree = "<group>"; };
 		8E97C4DD24BEACD70084978D /* SignUpViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewController.swift; sourceTree = "<group>"; };
 		8E99986E24C8D6E100668411 /* Bookmarks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bookmarks.storyboard; sourceTree = "<group>"; };
 		8EBFE47224AE5A9A007C1AF2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -142,13 +145,10 @@
 		D41AB10A24A9CC4300BFC8F9 /* UserNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsCell.swift; sourceTree = "<group>"; };
 		D41AB10C24A9CF5700BFC8F9 /* UserNewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsArticle.swift; sourceTree = "<group>"; };
 		D47C6F1D24BEAB7B00CB66C1 /* UserNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsViewController.swift; sourceTree = "<group>"; };
-		D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCategoryViewController.swift; sourceTree = "<group>"; };
-		D483C5EB24D11C8A00271089 /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
-		D483C5ED24D1212D00271089 /* badgeTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = badgeTypeCell.swift; sourceTree = "<group>"; };
+		D483C5EB24D11C8A00271089 /* BadgeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeUser.swift; sourceTree = "<group>"; };
 		D4DF66CA24AC397800D46005 /* UserNewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewsDetailViewController.swift; sourceTree = "<group>"; };
 		D54DA17424C3CDEC001B82F6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
-		D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,15 +250,12 @@
 		8E1DDEC424AC1EBF0000933E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E9744D524EBDFE3002C44A6 /* Badges */,
 				8E7FCE7524D5AD3E004A2ACD /* Bookmarks */,
 				8ED6F5F224D26730008D1D07 /* OfficialNews */,
 				D408D06024C7E96900920A68 /* Auth */,
 				ABDD3F6924C74139001BAF0F /* User News */,
 				8E1BF25924AEF7E700071367 /* MainUITabBarController.swift */,
-				D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */,
-				D54DA17824C492A6001B82F6 /* BadgeTableViewCell.swift */,
-				D483C5E924D1160700271089 /* BadgeCategoryViewController.swift */,
-				D483C5ED24D1212D00271089 /* badgeTypeCell.swift */,
 				8E1BF26324AF0AC000071367 /* LogoAnimationUIView.swift */,
 			);
 			path = Controllers;
@@ -272,6 +269,8 @@
 				ABDD3F6724C73B43001BAF0F /* UserNewsDataManager.swift */,
 				8ED6F5F324D26D85008D1D07 /* UserDataManager.swift */,
 				8E72093724DA6DCD00B5F2CF /* BookmarkDataManager.swift */,
+				8E9744D324EBD7E9002C44A6 /* BadgeDataManager.swift */,
+				8E9744D824EBE4CC002C44A6 /* BadgeUserDataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -308,6 +307,15 @@
 				8E0B7F9724A9C265007A4526 /* Badges.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8E9744D524EBDFE3002C44A6 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				D54DA17624C3D3CF001B82F6 /* BadgeViewController.swift */,
+				8E9744D624EBE22D002C44A6 /* BadgeTableViewCell.swift */,
+			);
+			path = Badges;
 			sourceTree = "<group>";
 		};
 		8ED6F5F224D26730008D1D07 /* OfficialNews */ = {
@@ -360,7 +368,7 @@
 				8E1DDEC524AC2B0E0000933E /* OfficialNewsArticle.swift */,
 				8E188C9E24BDED40002FA124 /* DBLastModified.swift */,
 				D54DA17424C3CDEC001B82F6 /* Badge.swift */,
-				D483C5EB24D11C8A00271089 /* BadgeType.swift */,
+				D483C5EB24D11C8A00271089 /* BadgeUser.swift */,
 				8ED6F5F524D26EE7008D1D07 /* User.swift */,
 				8E72093524DA6CA500B5F2CF /* Bookmark.swift */,
 			);
@@ -666,37 +674,37 @@
 				8E00CC2124DAF072004EE490 /* BooksmarksDetailsViewController.swift in Sources */,
 				8ED1513324D7E50E000FA1DD /* BookmarksTableViewCell.swift in Sources */,
 				8E1DDECE24AC2E570000933E /* OfficialNewsDataManager.swift in Sources */,
+				8E9744D724EBE22D002C44A6 /* BadgeTableViewCell.swift in Sources */,
 				8E1BF26424AF0AC000071367 /* LogoAnimationUIView.swift in Sources */,
-				D483C5EE24D1212D00271089 /* badgeTypeCell.swift in Sources */,
 				8E00CC1F24DAA8EF004EE490 /* OfficialNewsHelper.swift in Sources */,
 				D54DA17524C3CDEC001B82F6 /* Badge.swift in Sources */,
 				4DA1319B24BDE9A0001641F6 /* LoginViewController.swift in Sources */,
 				D4DF66CB24AC397800D46005 /* UserNewsDetailViewController.swift in Sources */,
 				D408D06924C7FF0800920A68 /* ProfileViewController.swift in Sources */,
 				D408D06524C7ECD800920A68 /* ForgotPassViewController.swift in Sources */,
+				8E9744D924EBE4CC002C44A6 /* BadgeUserDataManager.swift in Sources */,
 				8E1BF25E24AF007200071367 /* UIView+Constraints.swift in Sources */,
 				8E72093624DA6CA500B5F2CF /* Bookmark.swift in Sources */,
 				8E1DDED224AC4C440000933E /* OfficialNewsTableViewCell.swift in Sources */,
 				ABDD3F6824C73B43001BAF0F /* UserNewsDataManager.swift in Sources */,
 				8E1DDED024AC46E90000933E /* OfficialNewsViewController.swift in Sources */,
-				D54DA17924C492A6001B82F6 /* BadgeTableViewCell.swift in Sources */,
 				D41AB10B24A9CC4300BFC8F9 /* UserNewsCell.swift in Sources */,
 				8E188CA324BE2C52002FA124 /* OfficialNewsDetailsViewController.swift in Sources */,
 				8ED6F5F824D30490008D1D07 /* AuthViewController.swift in Sources */,
 				51396A8B2487338C00B85927 /* AppDelegate.swift in Sources */,
 				D54DA17724C3D3CF001B82F6 /* BadgeViewController.swift in Sources */,
+				8E9744D424EBD7E9002C44A6 /* BadgeDataManager.swift in Sources */,
 				8E1BF25A24AEF7E700071367 /* MainUITabBarController.swift in Sources */,
 				8E00CC1D24DA9ECC004EE490 /* HelperExtensions.swift in Sources */,
 				D47C6F1E24BEAB7B00CB66C1 /* UserNewsViewController.swift in Sources */,
 				8E188CA124BDEE8E002FA124 /* DBLastModifiedDataManager.swift in Sources */,
 				8E1DDECB24AC2E120000933E /* HTTP.swift in Sources */,
 				8ED6F5F424D26D85008D1D07 /* UserDataManager.swift in Sources */,
-				D483C5EC24D11C8A00271089 /* BadgeType.swift in Sources */,
+				D483C5EC24D11C8A00271089 /* BadgeUser.swift in Sources */,
 				8E7FCE7724D5AD69004A2ACD /* BookmarksViewController.swift in Sources */,
 				8E72093824DA6DCD00B5F2CF /* BookmarkDataManager.swift in Sources */,
 				8ED6F5F624D26EE7008D1D07 /* User.swift in Sources */,
 				8E1DDEC624AC2B0E0000933E /* OfficialNewsArticle.swift in Sources */,
-				D483C5EA24D1160700271089 /* BadgeCategoryViewController.swift in Sources */,
 				8EBFE47324AE5A9A007C1AF2 /* SwiftyJSON.swift in Sources */,
 				ABDD3F6D24C7493E001BAF0F /* UserNewsFormViewController.swift in Sources */,
 				8E97C4DE24BEACD70084978D /* SignUpViewViewController.swift in Sources */,

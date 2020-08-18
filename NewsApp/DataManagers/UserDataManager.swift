@@ -70,6 +70,11 @@ class UserDataManager {
         
         taskGroup.notify(queue: .main, execute: {
             loggedIn = u
+            
+            if loggedIn != nil {
+                BadgeUserDataManager.updateFirstLoginBadge(user: loggedIn!)
+            }
+            
             onComplete?(u)
         })
     }

@@ -7,23 +7,20 @@
 //
 
 import UIKit
+import FirebaseFirestoreSwift
 
-class Badge: NSObject {
-    //For main badge category page
+class Badge: Codable {
+    @DocumentID var id: String?;
+    var name: String;
+    var category: String;
+    var description: String;
+    var max: Int;
     
-    var badgeCategoryID:String
-    var badgeCategoryName:String
-    var badgeCategoryImage:String
-    var badgeCategoryProgressionCurrent: Int
-    var badgeCategoryProgressionMax: Int
-    
-    init(ID:String,Name:String, Image:String, ProgressionCurrent:Int, ProgressionMax:Int ){
-        self.badgeCategoryID = ID
-        self.badgeCategoryName = Name
-        self.badgeCategoryImage = Image
-        self.badgeCategoryProgressionCurrent = ProgressionCurrent
-        self.badgeCategoryProgressionMax = ProgressionMax
-        
+    init(id: String? = UUID().uuidString, name:String, category: String, description: String, max:Int){
+        self.id = id;
+        self.name = name
+        self.category = category;
+        self.description = description;
+        self.max = max
     }
-
 }
