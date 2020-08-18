@@ -2,7 +2,7 @@
 //  BadgeTableViewCell.swift
 //  NewsApp
 //
-//  Created by Joel on 18/8/20.
+//  Created by 145532G on 18/8/20.
 //  Copyright © 2020 M02-4. All rights reserved.
 //
 
